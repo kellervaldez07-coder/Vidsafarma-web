@@ -1,0 +1,742 @@
+/* Variables del globales */
+:root {
+   --azul-oscuro: #1b3280;
+    --azul-footer: #223b97;
+    --azul-claro-etiqueta: #3b82f6;
+    --verde-esmeralda: #19b782;
+    --verde-hover: #149669;
+    --texto-oscuro: #0f172a;
+   --texto-gris: #64748b;
+    --texto-gris-claro: #94a3b8;
+    --fondo-gris-claro: #f8fafc;
+    --borde-gris: #e2e8f0;
+    --blanco: #ffffff;
+
+    --azul-footer: #223b97;
+    --linea-separadora: rgba(255, 255, 255, 0.15);
+    --texto-blanco-suave: rgba(255, 255, 255, 0.85);
+
+}
+
+/* Diseño base o reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+body {
+    background-color: var(--fondo-gris-claro);
+}
+
+
+
+
+.contenedor {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*HEADER*/
+
+
+.cabecera {
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--borde-gris);
+}
+
+
+.cabecera-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.caja-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.logo-icono {
+    background-color: var(--azul-footer);
+    color: var(--blanco);
+    font-size: 24px;
+    font-weight: 800;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    animation: cambio-color 3s infinite alternate-reverse;
+}
+
+
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo-titulo {
+    color: var(--azul-oscuro);
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+
+.logo-subtitulo {
+    color: var(--texto-gris);
+    font-size: 14px;
+}
+
+
+.barra-busqueda {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--borde-gris);
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    
+}
+
+
+.icono-buscar {
+    color: var(--texto-gris-claro);
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+
+.campo-busqueda {
+    border: none;
+    outline: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    font-size: 14px;
+    color: var(--texto-gris);
+    background-color: transparent;
+}
+
+
+.boton-buscar {
+    background-color: var(--azul-footer);
+    color: var(--blanco);
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:background-color 0.3s ease;
+}
+.boton-buscar:hover {
+    background-color: #122460;
+    transform: scale(1,1.5);
+}
+
+.navegacion-principal {
+    border-top: 1px solid var(--fondo-gris-claro);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: var(--blanco);
+}
+
+
+.lista-enlaces {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+
+.enlace {
+    text-decoration: none;
+    color: var(--texto-gris);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+
+.enlace.activo {
+    color: var(--azul-footer);
+    text-decoration:underline  #f00;
+    text-decoration-thickness:2px;
+    
+}
+
+/*Pagina donde van las ofertas lo que lo contiene*/
+
+.contenido-ofertas {
+    margin-top: 50px;
+    margin-bottom: 80px;
+}
+
+
+.encabezado-ofertas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.etiqueta-ofertas-titulo {
+    background-color: var(--verde-esmeralda);
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+
+.titulo-pagina-ofertas {
+    color: var(--azul-oscuro);
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+
+.subtitulo-pagina-ofertas {
+    color: var(--texto-gris);
+    font-size: 16px;
+}
+/*Pagina Ofertas usando grid layaout*/
+.cuadricula-ofertas {
+    display: grid;
+   
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; 
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.tarjeta-promo {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde-gris);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.tarjeta-promo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--borde-gris);
+}
+
+/*donde va la imagen usando flexbox*/
+.caja-imagen-promo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+    padding: 20px;
+    background-color: var(--fondo-gris-claro); 
+    overflow: hidden;
+}
+
+
+.imagen-promo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease; 
+}
+
+.tarjeta-promo:hover .imagen-promo {
+    transform: scale(1.1); 
+}
+
+.etiqueta-descuento {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--verde-esmeralda); 
+    color: var(--blanco);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.etiqueta-estado {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    z-index: 2;
+}
+
+.estado-oscuro { 
+    background-color:var(--azul-oscuro); 
+    color:var(--blanco);
+} 
+
+.estado-claro { 
+    background-color: var(--naranja); 
+    color: var(--blanco); 
+} 
+
+
+/*Temp usando flexbox*/
+.caja-temporizador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: var(--blanco);
+    color: var(--verde-esmeralda);
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 1px solid var(--borde-gris);
+}
+
+/*info de la oferta usando flexbox interno*/
+.info-promo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.titulo-promo {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: var(--texto-oscuro);
+}
+
+.descripcion-promo {
+    margin: 0 0 15px 0;
+    color: var(--texto-gris);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.precios-promo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.precio-rebajado {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--verde-esmeralda);
+}
+
+.precio-tachado {
+    text-decoration: line-through;
+    color: var(--texto-gris);
+    font-size: 16px;
+}
+
+.texto-ahorro {
+    color: var(--verde-esmeralda);
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+/* Botón con transiciones */
+.boton-aprovechar {
+    margin-top: auto; 
+    background-color: var(--verde-esmeralda);
+    color: var(--blanco);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    
+    transition: background-color 0.3s ease;
+}
+
+.boton-aprovechar:hover {
+    background-color: var(--verde-hover);
+}
+
+/*HASTA AQUI*/
+
+/* ESTILOS DEL BANNER INFERIOR */
+.banner-promocional {
+    background: linear-gradient(90deg, var(--azul-oscuro) 0%, var(--verde-esmeralda) 100%);
+    border-radius: 12px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    padding-left: 55px;
+    padding-right: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.banner-promocional:hover {
+    transform: translateY(8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}   
+
+/* Caja contenedora izquierda */
+.banner-contenido-izq {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Letras blancas grandes del banner */
+.titulo-banner {
+    color: var(--blanco);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+/* Texto blanco descriptivo */
+.texto-banner {
+    color: var(--blanco);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+/* Agrupacion del input y boton */
+.formulario-banner {
+    display: flex;
+    gap: 15px;
+}
+
+/* Caja de escritura de correo */
+.input-banner {
+    flex: 1;
+    background-color: var(--fondo-input);
+    border: 1px solid var(--borde-input);
+    color: var(--blanco);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.input-banner::placeholder {
+    color: var(--texto-gris);
+}
+
+/* Boton blanco del banner */
+
+.boton-blanco-banner {
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.caja-porcentaje-gigante {
+    background-color: var(--azul-oscuro);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.numero-gigante {
+    color: var(--blanco);
+    font-size: 55px;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+
+.texto-maximo {
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*FOOTER*/
+
+
+.pie-pagina {
+    background-color: var(--azul-footer);
+    color: var(--blanco);
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+
+.pie-superior {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+
+.logo-pie {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+
+.logo-icono-pie {
+    background-color: var(--blanco);
+    color: var(--azul-footer);
+    font-size: 18px;
+    font-weight: 800;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.logo-titulo-pie {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--blanco);
+    letter-spacing: 0.5px;
+}
+
+
+.descripcion-pie {
+    color: var(--blanco);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding-right: 20px;
+}
+
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+}
+
+
+.icono-red {
+    color: var(--texto-blanco-suave);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.titulo-columna {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--blanco);
+}
+
+
+.lista-pie {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.lista-pie a:hover { color: var(--verde-hover); }
+
+
+.lista-contacto {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.lista-pie li {
+    margin-bottom: 12px;
+}
+
+
+.lista-pie a {
+    color:var(--texto-blanco-suave);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Flexbox en los iconos de direccion */
+.lista-contacto li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: var(--texto-blanco-suave);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.lista-contacto i {
+    margin-top: 3px;
+    font-size: 16px;
+}
+
+/* Franja del medio de pagos */
+.pie-medio {
+    border-top: 1px solid var(--borde-gris);
+    border-bottom: 1px solid var(--borde-gris);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.texto-pago {
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+
+.metodos-pago {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.etiqueta-pago {
+    background-color: var(--blanco);
+    color: var(--azul-footer);
+    font-size: 12px;
+    font-weight: 800;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 4px;
+}
+
+
+.pie-inferior {
+    padding-top: 25px;
+    text-align: center;
+    color: var(--texto-blanco-suave);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* MEDIA QUERIES (DISENO RESPONSIVO) */
+/*Tablets*/
+
+@media (max-width: 992px) {
+    /* Ajustes para tabletas */
+    .pie-superior {
+        grid-template-columns: 1fr 1fr;
+    }
+    .banner-promocional {
+        flex-direction: column;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+    }
+    .formulario-banner {
+        justify-content: center;
+    }
+}
+/*MediaQ- para celularess*/
+
+@media (max-width: 768px) {
+    
+    .cabecera-superior {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .lista-enlaces {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .cuadricula-ofertas {
+        grid-template-columns: 1fr;
+    }
+    .titulo-pagina-ofertas {
+        font-size: 32px;
+    }
+    .formulario-banner {
+        flex-direction: column;
+    }
+    .boton-blanco-banner {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .pie-superior {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .pie-medio {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+@keyframes cambio-color{
+    0%{
+        background-color: var(--verde-esmeralda);
+    }
+    100% {
+        background-color: var(--azul-oscuro);
+    }
+}
