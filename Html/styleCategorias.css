@@ -466,7 +466,8 @@ body {
     background-color: var(--blanco);
     border: 1px solid var(--borde-gris);
     border-radius: 10px; 
-    padding: 15px 10px; 
+    max-width: 220px;
+    padding: 20px 15px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -530,7 +531,7 @@ body {
 img.img-prod-mini {
     width: 100%; 
     max-width: 100%;
-    height: 70px; 
+    height: 200px; 
     object-fit: contain; 
     display: block; 
     margin: 0 auto 10px auto; 
