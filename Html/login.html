@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VidSafarma</title>
+    <!-- Enlazar el archivo CSS externo -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-card">
+        <h2>Acceso al panel de control</h2>
+        <div class="subtitle">Ingresa tus credenciales</div>
+
+        <div class="input-group">
+            <label>📧 Correo Electrónico</label>
+            <input type="email" id="email" placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="input-group">
+            <label>🔒 Contraseña</label>
+            <input type="password" id="password" placeholder="Ingresa tu contraseña">
+        </div>
+
+        <button class="btn-login" onclick="validarLogin()">INGRESAR</button>
+
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+
+        <div id="errorMsg" class="error-message"></div>
+
+        <div class="test-credentials">
+            🔐 Credenciales de prueba:<br>
+            <strong>admin@correo.com</strong> / <strong>1234</strong>
+        </div>
+    </div>
+
+    <script>
+        function validarLogin() {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let errorDiv = document.getElementById('errorMsg');
+
+            // Credenciales válidas
+            if (email === "admin@correo.com" && password === "1234") {
+                // Redirigir a la página principal
+                window.location.href = "Index.html";
+            } else {
+                errorDiv.style.display = "block";
+                errorDiv.textContent = "❌ Correo o contraseña incorrectos. Intenta de nuevo.";
+                
+                // Limpiar campo contraseña
+                document.getElementById('password').value = "";
+                
+                // Ocultar error después de 3 segundos
+                setTimeout(function() {
+                    errorDiv.style.display = "none";
+                }, 3000);
+            }
+        }
+
+        // Permitir presionar Enter para enviar
+        document.getElementById('email').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') validarLogin();
+        });
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') validarLogin();
+        });
+    </script>
+</body>
+</html>
