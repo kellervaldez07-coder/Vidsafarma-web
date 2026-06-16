@@ -1,21 +1,24 @@
-/* Variables del globales */
+/* Variables globales */
 :root {
-   --azul-oscuro: #1b3280;
+    --azul-oscuro: #1b3280;
     --azul-footer: #223b97;
     --azul-claro-etiqueta: #3b82f6;
     --verde-esmeralda: #19b782;
     --verde-hover: #149669;
     --texto-oscuro: #0f172a;
-   --texto-gris: #64748b;
+    --texto-gris: #64748b;
     --texto-gris-claro: #94a3b8;
     --fondo-gris-claro: #f8fafc;
     --borde-gris: #e2e8f0;
     --blanco: #ffffff;
 
-    --azul-footer: #223b97;
+    /* Variables añadidas para elementos específicos del código */
+    --naranja: #f97316;
+    --fondo-input: rgba(255, 255, 255, 0.1);
+    --borde-input: rgba(255, 255, 255, 0.2);
+
     --linea-separadora: rgba(255, 255, 255, 0.15);
     --texto-blanco-suave: rgba(255, 255, 255, 0.85);
-
 }
 
 /* Diseño base o reseteo */
@@ -29,8 +32,11 @@ body {
     background-color: var(--fondo-gris-claro);
 }
 
-
-
+/* PSEUDO-ELEMENTO: Color de selección de texto */
+::selection {
+    background-color: var(--verde-esmeralda);
+    color: var(--blanco);
+}
 
 .contenedor {
     max-width: 1200px;
@@ -40,14 +46,11 @@ body {
     padding-right: 20px;
 }
 
-/*HEADER*/
-
-
+/* HEADER */
 .cabecera {
     background-color: var(--blanco);
     border-bottom: 1px solid var(--borde-gris);
 }
-
 
 .cabecera-superior {
     display: flex;
@@ -57,13 +60,11 @@ body {
     padding-bottom: 20px;
 }
 
-
 .caja-logo {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
 
 .logo-icono {
     background-color: var(--azul-footer);
@@ -79,12 +80,10 @@ body {
     animation: cambio-color 3s infinite alternate-reverse;
 }
 
-
 .logo-texto {
     display: flex;
     flex-direction: column;
 }
-
 
 .logo-titulo {
     color: var(--azul-oscuro);
@@ -93,12 +92,10 @@ body {
     line-height: 1.1;
 }
 
-
 .logo-subtitulo {
     color: var(--texto-gris);
     font-size: 14px;
 }
-
 
 .barra-busqueda {
     display: flex;
@@ -108,16 +105,20 @@ body {
     overflow: hidden;
     width: 100%;
     max-width: 500px;
-    
+    transition: all 0.3s ease;
 }
 
+/* PSEUDO-CLASE: Borde verde al hacer clic en buscar */
+.barra-busqueda:focus-within {
+    border-color: var(--verde-esmeralda);
+    box-shadow: 0 0 0 3px rgba(25, 183, 130, 0.2);
+}
 
 .icono-buscar {
     color: var(--texto-gris-claro);
     padding-left: 15px;
     padding-right: 10px;
 }
-
 
 .campo-busqueda {
     border: none;
@@ -130,6 +131,11 @@ body {
     background-color: transparent;
 }
 
+/* PSEUDO-ELEMENTO: Texto fantasma del input */
+.campo-busqueda::placeholder {
+    color: var(--texto-gris-claro);
+    font-style: italic;
+}
 
 .boton-buscar {
     background-color: var(--azul-footer);
@@ -141,11 +147,16 @@ body {
     padding-bottom: 13px;
     font-weight: 600;
     cursor: pointer;
-    transition:background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s;
 }
+
 .boton-buscar:hover {
     background-color: #122460;
-    transform: scale(1,1.5);
+}
+
+/* PSEUDO-CLASE: Hundimiento al pulsar */
+.boton-buscar:active {
+    transform: scale(0.95);
 }
 
 .navegacion-principal {
@@ -155,7 +166,6 @@ body {
     background-color: var(--blanco);
 }
 
-
 .lista-enlaces {
     display: flex;
     justify-content: center;
@@ -163,29 +173,43 @@ body {
     list-style: none;
 }
 
-
 .enlace {
     text-decoration: none;
     color: var(--texto-gris);
     font-weight: 600;
     font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
 }
 
+/* PSEUDO-ELEMENTO: Línea animada en la navegación */
+.enlace::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--azul-footer);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
 
-.enlace.activo {
+.enlace:hover, .enlace.activo {
     color: var(--azul-footer);
-    text-decoration:underline  #f00;
-    text-decoration-thickness:2px;
-    
 }
 
-/*Pagina donde van las ofertas lo que lo contiene*/
+.enlace:hover::after, .enlace.activo::after {
+    width: 100%;
+}
 
+
+/* PÁGINA DE OFERTAS */
 .contenido-ofertas {
     margin-top: 50px;
     margin-bottom: 80px;
 }
-
 
 .encabezado-ofertas {
     display: flex;
@@ -195,20 +219,33 @@ body {
     margin-bottom: 45px;
 }
 
-
 .etiqueta-ofertas-titulo {
     background-color: var(--verde-esmeralda);
     color: var(--blanco);
     font-size: 14px;
     font-weight: 700;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 6px 16px;
     border-radius: 20px;
     margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* PSEUDO-ELEMENTO: Reflejo de luz al pasar el cursor */
+.etiqueta-ofertas-titulo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.etiqueta-ofertas-titulo:hover::after {
+    left: 100%;
+}
 
 .titulo-pagina-ofertas {
     color: var(--azul-oscuro);
@@ -217,22 +254,20 @@ body {
     margin-bottom: 15px;
 }
 
-
 .subtitulo-pagina-ofertas {
     color: var(--texto-gris);
     font-size: 16px;
 }
-/*Pagina Ofertas usando grid layaout*/
+
+/* Cuadrícula de Tarjetas */
 .cuadricula-ofertas {
     display: grid;
-   
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px; 
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 
 .tarjeta-promo {
     background-color: var(--blanco);
@@ -241,18 +276,14 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    
-    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
 .tarjeta-promo:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px var(--borde-gris);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08); /* Sombra más sutil */
 }
 
-/*donde va la imagen usando flexbox*/
 .caja-imagen-promo {
     position: relative;
     display: flex;
@@ -264,7 +295,6 @@ body {
     overflow: hidden;
 }
 
-
 .imagen-promo {
     max-width: 100%;
     max-height: 100%;
@@ -273,7 +303,7 @@ body {
 }
 
 .tarjeta-promo:hover .imagen-promo {
-    transform: scale(1.1); 
+    transform: scale(1.08); 
 }
 
 .etiqueta-descuento {
@@ -287,6 +317,7 @@ body {
     font-weight: bold;
     font-size: 14px;
     z-index: 2;
+    box-shadow: 0 2px 5px rgba(25, 183, 130, 0.4);
 }
 
 .etiqueta-estado {
@@ -301,8 +332,8 @@ body {
 }
 
 .estado-oscuro { 
-    background-color:var(--azul-oscuro); 
-    color:var(--blanco);
+    background-color: var(--azul-oscuro); 
+    color: var(--blanco);
 } 
 
 .estado-claro { 
@@ -310,8 +341,6 @@ body {
     color: var(--blanco); 
 } 
 
-
-/*Temp usando flexbox*/
 .caja-temporizador {
     display: flex;
     justify-content: center;
@@ -325,7 +354,6 @@ body {
     border-bottom: 1px solid var(--borde-gris);
 }
 
-/*info de la oferta usando flexbox interno*/
 .info-promo {
     padding: 20px;
     display: flex;
@@ -345,7 +373,6 @@ body {
     font-size: 14px;
     line-height: 1.4;
 }
-
 
 .precios-promo {
     display: flex;
@@ -373,7 +400,6 @@ body {
     margin: 0 0 20px 0;
 }
 
-/* Botón con transiciones */
 .boton-aprovechar {
     margin-top: auto; 
     background-color: var(--verde-esmeralda);
@@ -389,41 +415,41 @@ body {
     align-items: center;
     gap: 8px;
     width: 100%;
-    
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .boton-aprovechar:hover {
     background-color: var(--verde-hover);
 }
 
-/*HASTA AQUI*/
+/* PSEUDO-CLASE: Efecto clic */
+.boton-aprovechar:active {
+    transform: scale(0.97);
+}
 
-/* ESTILOS DEL BANNER INFERIOR */
+
+/* BANNER INFERIOR */
 .banner-promocional {
     background: linear-gradient(90deg, var(--azul-oscuro) 0%, var(--verde-esmeralda) 100%);
     border-radius: 12px;
-    padding-top: 45px;
-    padding-bottom: 45px;
-    padding-left: 55px;
-    padding-right: 55px;
+    padding: 45px 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .banner-promocional:hover {
-    transform: translateY(8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(25, 183, 130, 0.2);
 }   
 
-/* Caja contenedora izquierda */
 .banner-contenido-izq {
     flex: 1;
     max-width: 600px;
 }
 
-/* Letras blancas grandes del banner */
 .titulo-banner {
     color: var(--blanco);
     font-size: 32px;
@@ -431,7 +457,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Texto blanco descriptivo */
 .texto-banner {
     color: var(--blanco);
     font-size: 15px;
@@ -439,60 +464,63 @@ body {
     margin-bottom: 25px;
 }
 
-/* Agrupacion del input y boton */
 .formulario-banner {
     display: flex;
     gap: 15px;
 }
 
-/* Caja de escritura de correo */
 .input-banner {
     flex: 1;
     background-color: var(--fondo-input);
     border: 1px solid var(--borde-input);
     color: var(--blanco);
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 12px 20px;
     border-radius: 6px;
     font-size: 14px;
     outline: none;
+    transition: all 0.3s ease;
 }
 
+/* PSEUDO-CLASE: Brillo al hacer clic en el input oscuro */
+.input-banner:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--blanco);
+}
 
 .input-banner::placeholder {
-    color: var(--texto-gris);
+    color: rgba(255, 255, 255, 0.6);
 }
-
-/* Boton blanco del banner */
 
 .boton-blanco-banner {
     background-color: var(--blanco);
     color: var(--azul-oscuro);
     border: none;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 0 25px;
     border-radius: 6px;
     font-weight: 800;
     font-size: 14px;
     cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.3s;
 }
 
+.boton-blanco-banner:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.boton-blanco-banner:active {
+    transform: scale(0.95);
+}
 
 .caja-porcentaje-gigante {
     background-color: var(--azul-oscuro);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 30px 50px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
-
 
 .numero-gigante {
     color: var(--blanco);
@@ -502,23 +530,20 @@ body {
     margin-bottom: 5px;
 }
 
-
 .texto-maximo {
     color: var(--blanco);
     font-size: 15px;
     font-weight: 600;
 }
 
-/*FOOTER*/
 
-
+/* FOOTER */
 .pie-pagina {
     background-color: var(--azul-footer);
     color: var(--blanco);
     padding-top: 60px;
     padding-bottom: 30px;
 }
-
 
 .pie-superior {
     display: grid;
@@ -527,14 +552,12 @@ body {
     margin-bottom: 40px;
 }
 
-
 .logo-pie {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
 }
-
 
 .logo-icono-pie {
     background-color: var(--blanco);
@@ -556,28 +579,30 @@ body {
     letter-spacing: 0.5px;
 }
 
-
 .descripcion-pie {
-    color: var(--blanco);
+    color: var(--texto-blanco-suave);
     font-size: 14px;
     line-height: 1.6;
     margin-bottom: 25px;
     padding-right: 20px;
 }
 
-
 .redes-sociales {
     display: flex;
     gap: 15px;
 }
 
-
 .icono-red {
     color: var(--texto-blanco-suave);
     font-size: 20px;
     text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
 }
 
+.icono-red:hover {
+    transform: translateY(-5px);
+    color: var(--verde-esmeralda);
+}
 
 .titulo-columna {
     font-size: 16px;
@@ -586,36 +611,46 @@ body {
     color: var(--blanco);
 }
 
-
-.lista-pie {
+.lista-pie, .lista-contacto {
     list-style: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
 }
-.lista-pie a:hover { color: var(--verde-hover); }
-
-
-.lista-contacto {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 
 .lista-pie li {
     margin-bottom: 12px;
 }
 
-
 .lista-pie a {
-    color:var(--texto-blanco-suave);
+    color: var(--texto-blanco-suave);
     text-decoration: none;
     font-size: 14px;
+    transition: color 0.3s, padding-left 0.3s;
+    position: relative;
+    display: inline-block;
 }
 
-/* Flexbox en los iconos de direccion */
+/* PSEUDO-ELEMENTO: Flechita que se desliza en el footer */
+.lista-pie a::before {
+    content: '›';
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    color: var(--verde-esmeralda);
+    font-weight: bold;
+}
+
+.lista-pie a:hover { 
+    color: var(--verde-esmeralda); 
+    padding-left: 15px;
+}
+
+.lista-pie a:hover::before {
+    opacity: 1;
+    transform: translateX(-12px);
+}
+
 .lista-contacto li {
     display: flex;
     align-items: flex-start;
@@ -626,16 +661,15 @@ body {
     line-height: 1.5;
 }
 
-
 .lista-contacto i {
     margin-top: 3px;
     font-size: 16px;
+    color: var(--verde-esmeralda);
 }
 
-/* Franja del medio de pagos */
 .pie-medio {
-    border-top: 1px solid var(--borde-gris);
-    border-bottom: 1px solid var(--borde-gris);
+    border-top: 1px solid var(--linea-separadora);
+    border-bottom: 1px solid var(--linea-separadora);
     padding-top: 25px;
     padding-bottom: 25px;
     display: flex;
@@ -644,12 +678,10 @@ body {
     gap: 20px;
 }
 
-
 .texto-pago {
     color: var(--blanco);
     font-size: 14px;
 }
-
 
 .metodos-pago {
     display: flex;
@@ -657,19 +689,19 @@ body {
     flex-wrap: wrap;
 }
 
-
 .etiqueta-pago {
     background-color: var(--blanco);
     color: var(--azul-footer);
     font-size: 12px;
     font-weight: 800;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 6px 15px;
     border-radius: 4px;
+    transition: transform 0.3s;
 }
 
+.etiqueta-pago:hover {
+    transform: translateY(-3px);
+}
 
 .pie-inferior {
     padding-top: 25px;
@@ -679,11 +711,8 @@ body {
     line-height: 1.8;
 }
 
-/* MEDIA QUERIES (DISENO RESPONSIVO) */
-/*Tablets*/
-
+/* MEDIA QUERIES (DISEÑO RESPONSIVO) */
 @media (max-width: 992px) {
-    /* Ajustes para tabletas */
     .pie-superior {
         grid-template-columns: 1fr 1fr;
     }
@@ -697,10 +726,8 @@ body {
         justify-content: center;
     }
 }
-/*MediaQ- para celularess*/
 
 @media (max-width: 768px) {
-    
     .cabecera-superior {
         flex-direction: column;
         gap: 20px;
@@ -732,11 +759,8 @@ body {
         gap: 15px;
     }
 }
-@keyframes cambio-color{
-    0%{
-        background-color: var(--verde-esmeralda);
-    }
-    100% {
-        background-color: var(--azul-oscuro);
-    }
+
+@keyframes cambio-color {
+    0% { background-color: var(--verde-esmeralda); }
+    100% { background-color: var(--azul-oscuro); }
 }
