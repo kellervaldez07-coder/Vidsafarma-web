@@ -609,88 +609,79 @@ body {
     font-size: 16px;
 }
 
-/* Líneas separadoras y Flexbox para los métodos de pago */
-/* Líneas separadoras y Flexbox para los métodos de pago */
-
 .pie-medio {
-
     border-top: 1px solid var(--borde-gris);
-
     border-bottom: 1px solid var(--borde-gris);
-
     padding-top: 25px;
-
     padding-bottom: 25px;
-
     display: flex;
-
-    justify-content:space-between;
-
+    justify-content: space-between;
     align-items: center;
-
     gap: 20px;
-
 }
 
-
+.contenedor-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 .texto-pago {
-
     color: var(--blanco);
-
     font-size: 14px;
-
 }
-
-
 
 .metodos-pago {
-
     display: flex;
-
     align-items: center;
-
     justify-content: left;
-
-    gap: 15px; /* espacio uniforme entre íconos */
-
-   
-
+    gap: 15px;
+    flex-wrap: wrap;
 }
-
-
 
 .metodos-pago img {
-
-    width: 70px;       /* tamaño equilibrado para todos */
-
-    height: 70px;      /* altura uniforme */
-
+    width: 70px;
+    height: 70px;
     object-fit: contain;
-
-    border-radius: 8px; /* bordes suaves si lo deseas */
-
-    background-color: var(--blanco); /* opcional para contraste */
-
-    padding: 8px; /* espacio interno */
-
+    border-radius: 8px;
+    background-color: var(--blanco);
+    padding: 8px;
     transition: transform 0.3s ease;
-
 }
-
-
 
 .metodos-pago img:hover {
-
     transform: scale(1.1);
-
 }
 
-
-.etiqueta-pago:nth-child(even) {
-    box-shadow: inset 0 0 0 1px var(--verde-esmeralda);
+/* Agrupador para que el texto y los iconos se mantengan unidos a la izquierda */
+.contenedor-izquierda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
+/* Estilo para el enlace del Libro de Reclamaciones */
+.libro-reclamaciones a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Estilo específico para el icono del libro */
+.libro-reclamaciones img {
+    height: 50px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Efecto hover opcional para el enlace */
+.libro-reclamaciones a:hover {
+    transform: scale(1.1);
+}
 .pie-inferior {
     padding-top: 25px;
     text-align: center;
