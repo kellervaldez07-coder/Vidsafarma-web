@@ -610,39 +610,82 @@ body {
 }
 
 /* Líneas separadoras y Flexbox para los métodos de pago */
+/* Líneas separadoras y Flexbox para los métodos de pago */
+
 .pie-medio {
+
     border-top: 1px solid var(--borde-gris);
+
     border-bottom: 1px solid var(--borde-gris);
+
     padding-top: 25px;
+
     padding-bottom: 25px;
+
     display: flex;
-    justify-content: center;
+
+    justify-content:space-between;
+
     align-items: center;
+
     gap: 20px;
+
 }
+
+
 
 .texto-pago {
+
     color: var(--blanco);
+
     font-size: 14px;
+
 }
+
+
 
 .metodos-pago {
+
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: left;
+
+    gap: 15px; /* espacio uniforme entre íconos */
+
+   
+
 }
 
-.etiqueta-pago {
-    background-color: var(--blanco);
-    color: var(--azul-footer);
-    font-size: 12px;
-    font-weight: 800;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 4px;
+
+
+.metodos-pago img {
+
+    width: 70px;       /* tamaño equilibrado para todos */
+
+    height: 70px;      /* altura uniforme */
+
+    object-fit: contain;
+
+    border-radius: 8px; /* bordes suaves si lo deseas */
+
+    background-color: var(--blanco); /* opcional para contraste */
+
+    padding: 8px; /* espacio interno */
+
+    transition: transform 0.3s ease;
+
 }
+
+
+
+.metodos-pago img:hover {
+
+    transform: scale(1.1);
+
+}
+
 
 .etiqueta-pago:nth-child(even) {
     box-shadow: inset 0 0 0 1px var(--verde-esmeralda);
