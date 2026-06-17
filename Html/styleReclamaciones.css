@@ -87,7 +87,7 @@ textarea {
 }
 
 .btn-enviar:hover {
-    background-color: #149669;
+    background-color:var(--verde-esmeralda);
 }
 
 .nota-explicativa {
