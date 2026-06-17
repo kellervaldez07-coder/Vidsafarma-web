@@ -471,7 +471,7 @@ body {
 /* ESTILOS DEL BANNER INFERIOR */
 .banner-promocional {
     background: linear-gradient(90deg, var(--azul-oscuro) 0%, var(--verde-esmeralda) 100%);
-    border-radius: 12px;
+    border-radius: 0px;
     padding-top: 45px;
     padding-bottom: 45px;
     padding-left: 85px;
@@ -496,9 +496,14 @@ body {
 }
 .banner-contenido-der{
     margin-right: 190px;
+    max-width: 600px;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
 
 }
-
+.banner-contenido-der:hover {
+    box-shadow: 0 0 20px var(--amarillo-ofertas);
+    transform: scale(1.35); 
+}
 /* Letras blancas grandes del banner */
 .titulo-banner {
     color: var(--blanco);
