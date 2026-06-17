@@ -29,6 +29,13 @@
             <input type="text" placeholder="Buscar en el blog" class="campo-busqueda">
             <button class="boton-buscar">Buscar</button>
         </div>
+             <!-- Nuevo bloque del Carrito -->
+        <div class="caja-carrito">
+            <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="contador-carrito">0</span>
+            </a>
+        </div>
     </div>
     <nav class="navegacion-principal">
         <ul class="lista-enlaces">
@@ -58,7 +65,8 @@
                 <span class="etiqueta-categoria bg-rosa">Cuidado Personal</span>
             </div>
             <div class="info-blog">
-                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 24 de Mayo, 2026</span>
+           
+                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 8 de Junio, 2026</span>
                 <h3 class="titulo-blog">Guía Definitiva para una Rutina de Skincare según tu tipo de piel</h3>
                 
                 <input type="checkbox" id="check1" class="input-desplegable-blog">
@@ -87,7 +95,7 @@
                 <span class="etiqueta-categoria bg-verde">Nutrición</span>
             </div>
             <div class="info-blog">
-                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 20 de Mayo, 2026</span>
+                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 13 de Junio, 2026</span>
                 <h3 class="titulo-blog">¿Realmente necesitas tomar suplementos vitamínicos diarios?</h3>
                 
                 <input type="checkbox" id="check2" class="input-desplegable-blog">
@@ -118,7 +126,7 @@
                 <span class="etiqueta-categoria bg-azul">Prevención</span>
             </div>
             <div class="info-blog">
-                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 15 de Mayo, 2026</span>
+                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 15 de Junio, 2026</span>
                 <h3 class="titulo-blog">Los 10 elementos que no pueden faltar en tu botiquín en casa</h3>
                 
                 <input type="checkbox" id="check3" class="input-desplegable-blog">
@@ -155,7 +163,7 @@
                 <span class="etiqueta-categoria bg-morado">Cuidado Infantil</span>
             </div>
             <div class="info-blog">
-                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 10 de Mayo, 2026</span>
+                <span class="fecha-blog"><i class="fa-regular fa-calendar"></i> 16 de Mayo, 2026</span>
                 <h3 class="titulo-blog">Consejos pediátricos para mejorar el sueño de tu bebé</h3>
                 
                 <input type="checkbox" id="check4" class="input-desplegable-blog">
@@ -191,8 +199,9 @@
                 <p class="descripcion-pie">Tu farmacia de confianza desde hace 25 años. Comprometidos con tu salud y bienestar</p>
                 <div class="redes-sociales">
                    
-                    <a href="#" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="icono-red"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com" title="Instagram" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://web.whatsapp.com" title="WhatsApp" class="icono-red"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
             <div class="columna-pie">
@@ -239,14 +248,25 @@
                 </ul>
             </div>
         </div>
-        <div class="pie-medio">
-            <span class="texto-pago">Métodos de pago aceptados:</span>
-            <div class="metodos-pago">
-                <span class="etiqueta-pago">Visa</span>
-                <span class="etiqueta-pago">Mastercard</span>
-                <span class="etiqueta-pago">Yape</span>
-                <span class="etiqueta-pago">Plin</span>
-            </div>
+       <div class="pie-medio">
+                <div class="bloque-izquierdo">
+                    <span class="texto-pago">Métodos de pago aceptados:</span>
+                    <div class="metodos-pago">
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/visa-logo.png" alt="Visa"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/yape.png" alt="Yape"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/Plin.webp" alt="Plin"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/Pago-Efectivo.jpg" alt="Efectivo"></span>
+                    </div>
+                </div>
+
+                <div class="libro-reclamaciones">
+                    <span class="texto-libro">Libro de Reclamaciones:</span>
+                    <a href="Reclamaciones.html">
+                        
+                     <img src="../Imagenes/Logo-pago/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                        
+                    </a>
+                </div>
         </div>
         <div class="pie-inferior">
                 <p>&copy; 2026 Vidsafarma. Todos los derechos reservados.</p>

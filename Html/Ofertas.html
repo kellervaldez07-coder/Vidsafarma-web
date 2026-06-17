@@ -25,6 +25,13 @@
                 <input type="text" class="campo-busqueda" placeholder="Buscar Ofertas">
                 <button type="submit" class="boton-buscar">Buscar</button>
             </form>
+            <!-- Nuevo bloque del Carrito -->
+        <div class="caja-carrito">
+            <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="contador-carrito">0</span>
+            </a>
+        </div>
         </div>
 
         <nav class="navegacion-principal">
@@ -36,13 +43,13 @@
                 <li><a href="Nosotros.html" class="enlace">Nosotros</a></li>
             </ul>
         </nav>
-    </header>
+    </header
 
     <main class="contenido-ofertas contenedor">
         
         <section class="encabezado-ofertas">
             <span class="etiqueta-ofertas-titulo"><i class="fa-solid fa-percent"></i> Ofertas Especiales</span>
-            <h1 class="titulo-pagina-ofertas">Productos en Oferta</h1>
+            <h1 class="titulo-pagina-ofertas">Ofertas Especiales - Ahorra Hoy!</h1>
             <p class="subtitulo-pagina-ofertas">Aprovecha nuestras promociones exclusivas y ahorra en productos de calidad</p>
         </section>
         <section class="cuadricula-ofertas">
@@ -134,6 +141,49 @@
             <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
         </div>
     </article>
+     <article class="tarjeta-promo">
+        <div class="caja-imagen-promo">
+            <span class="etiqueta-descuento">-18%</span>
+            <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
+            <img src="../Imagenes/Img-Ofertas/NANwebp.webp" alt="Formula-Lactea" class="imagen-promo">
+        </div>
+        <div class="caja-temporizador">
+            <i class="fa-regular fa-clock icono-reloj"></i>
+            <span class="texto-temporizador">Termina en 6 días</span>
+        </div>
+        <div class="info-promo">
+            <h3 class="titulo-promo">NAN MaxiLata 1.1kg</h3>
+            <p class="descripcion-promo">NAN® 1 Fórmula Láctea Infantil de Inicio en Polvo 1.1kg OPTIPRO</p>
+            <div class="precios-promo">
+                <span class="precio-rebajado">S/.123.66</span>
+                <span class="precio-tachado">S/.150.80</span>
+            </div>
+            <p class="texto-ahorro">Ahorras S/.27.14</p>
+            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
+        </div>
+    </article>
+     <article class="tarjeta-promo">
+        <div class="caja-imagen-promo">
+            <span class="etiqueta-descuento">-22%</span>
+            <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
+            <img src="../Imagenes/Img-Ofertas/EUCERIN.webp" alt="protector-Solar" class="imagen-promo">
+        </div>
+        <div class="caja-temporizador">
+            <i class="fa-regular fa-clock icono-reloj"></i>
+            <span class="texto-temporizador">Termina en 7 día</span>
+        </div>
+        <div class="info-promo">
+            <h3 class="titulo-promo">Protector Solar 50+ FPS</h3>
+            <p class="descripcion-promo">Eucerin Sun Hydro Fluid con Color | Tono Claro</p>
+            <div class="precios-promo">
+                <span class="precio-rebajado">S/.81.90</span>
+                <span class="precio-tachado">S/105.00</span>
+            </div>
+            <p class="texto-ahorro">Ahorras S/.23.10</p>
+            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
+        </div>
+    </article>
+    
 
 </section>
         <section class="banner-promocional">
@@ -168,6 +218,7 @@
                     <div class="redes-sociales">
                         <a href="https://www.instagram.com" title="Instagram" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://web.whatsapp.com" title="WhatsApp" class="icono-red"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
 
@@ -217,12 +268,23 @@
             </div>
 
             <div class="pie-medio">
-                <span class="texto-pago">Métodos de pago aceptados:</span>
-                <div class="metodos-pago">
-                    <span class="etiqueta-pago">VISA</span>
-                    <span class="etiqueta-pago">Mastercard</span>
-                    <span class="etiqueta-pago">PayPal</span>
-                    <span class="etiqueta-pago">Efectivo</span>
+                <div class="bloque-izquierdo">
+                    <span class="texto-pago">Métodos de pago aceptados:</span>
+                    <div class="metodos-pago">
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/visa-logo.png" alt="Visa"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/yape.png" alt="Yape"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/Plin.webp" alt="Plin"></span>
+                        <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/Pago-Efectivo.jpg" alt="Efectivo"></span>
+                    </div>
+                </div>
+
+                <div class="libro-reclamaciones">
+                    <span class="texto-libro">Libro de Reclamaciones:</span>
+                    <a href="Reclamaciones.html">
+                        
+                     <img src="../Imagenes/Logo-pago/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                        
+                    </a>
                 </div>
             </div>
 
