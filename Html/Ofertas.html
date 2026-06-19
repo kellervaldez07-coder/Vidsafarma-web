@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styleOfertas.css">
+    <link rel="stylesheet" href="carrito.css">
 </head>
 <body class="fondo-gris-claro">
-
     <header class="cabecera">
         <div class="cabecera-superior contenedor">
             <div class="caja-logo">
@@ -19,21 +19,19 @@
                     <span class="logo-subtitulo">Tu salud, nuestra prioridad</span>
                 </div>
             </div>
-            
             <form class="barra-busqueda">
                 <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
                 <input type="text" class="campo-busqueda" placeholder="Buscar Ofertas">
                 <button type="submit" class="boton-buscar">Buscar</button>
             </form>
             <!-- Nuevo bloque del Carrito -->
-        <div class="caja-carrito">
-            <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="contador-carrito">0</span>
-            </a>
+            <div class="caja-carrito">
+                <a href="#" id="btnAbrirCarrito" class="enlace-carrito" onclick="toggleCarrito(); return false;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="contador-carrito" id="contador-carrito">0</span>
+                </a>
+            </div>
         </div>
-        </div>
-
         <nav class="navegacion-principal">
             <ul class="lista-enlaces contenedor">
                 <li><a href="Index.html" class="enlace">Inicio</a></li>
@@ -43,149 +41,154 @@
                 <li><a href="Nosotros.html" class="enlace">Nosotros</a></li>
             </ul>
         </nav>
-    </header
+    </header>
 
     <main class="contenido-ofertas contenedor">
-        
         <section class="encabezado-ofertas">
             <span class="etiqueta-ofertas-titulo"><i class="fa-solid fa-percent"></i> Ofertas Especiales</span>
             <h1 class="titulo-pagina-ofertas">Ofertas Especiales - Ahorra Hoy!</h1>
             <p class="subtitulo-pagina-ofertas">Aprovecha nuestras promociones exclusivas y ahorra en productos de calidad</p>
         </section>
+
         <section class="cuadricula-ofertas">
-    
-    <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-33%</span>
-            <span class="etiqueta-estado estado-oscuro">Más Vendido</span>
-            <img src="../Imagenes/Img-Ofertas/Omega3.webp" alt="Pack Vitaminas + Omega 3" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 2 días</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">Pack Vitaminas + Omega 3</h3>
-            <p class="descripcion-promo">Combo especial para fortalecer tu salud</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.29.99</span>
-                <span class="precio-tachado">S/45</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.15.01</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
+            <!-- Oferta 1: Pack Vitaminas + Omega 3 -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-33%</span>
+                    <span class="etiqueta-estado estado-oscuro">Más Vendido</span>
+                    <img src="../Imagenes/Img-Ofertas/Omega3.webp" alt="Pack Vitaminas + Omega 3" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 2 días</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">Pack Vitaminas + Omega 3</h3>
+                    <p class="descripcion-promo">Combo especial para fortalecer tu salud</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.29.99</span>
+                        <span class="precio-tachado">S/45</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.15.01</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('Pack Vitaminas + Omega 3', 29.99, '../Imagenes/Img-Ofertas/Omega3.webp')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
 
-    <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-31%</span>
-            <span class="etiqueta-estado estado-claro">Oferta Especial</span>
-            <img src="../Imagenes/Img-Ofertas/Botiquin.webp" alt="Kit Botiquín Familiar" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 5 días</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">Kit Botiquín Familiar</h3>
-            <p class="descripcion-promo">Todo lo necesario para emergencias en casa</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.44.99</span>
-                <span class="precio-tachado">S/.65</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.20.01</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
+            <!-- Oferta 2: Kit Botiquín Familiar -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-31%</span>
+                    <span class="etiqueta-estado estado-claro">Oferta Especial</span>
+                    <img src="../Imagenes/Img-Ofertas/Botiquin.webp" alt="Kit Botiquín Familiar" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 5 días</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">Kit Botiquín Familiar</h3>
+                    <p class="descripcion-promo">Todo lo necesario para emergencias en casa</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.44.99</span>
+                        <span class="precio-tachado">S/.65</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.20.01</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('Kit Botiquín Familiar', 44.99, '../Imagenes/Img-Ofertas/Botiquin.webp')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
 
-    <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-31%</span>
-            <span class="etiqueta-estado estado-oscuro">Nuevo</span>
-            <img src="../Imagenes/Img-Ofertas/VitaminaD.avif" alt="Suplemento Calcio + Vitamina D" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 3 días</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">Suplemento Calcio + Vitamina D</h3>
-            <p class="descripcion-promo">Fortalece tus huesos y articulaciones</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.21.99</span>
-                <span class="precio-tachado">S/.32</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.10.01</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
+            <!-- Oferta 3: Suplemento Calcio + Vitamina D -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-31%</span>
+                    <span class="etiqueta-estado estado-oscuro">Nuevo</span>
+                    <img src="../Imagenes/Img-Ofertas/VitaminaD.avif" alt="Suplemento Calcio + Vitamina D" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 3 días</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">Suplemento Calcio + Vitamina D</h3>
+                    <p class="descripcion-promo">Fortalece tus huesos y articulaciones</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.21.99</span>
+                        <span class="precio-tachado">S/.32</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.10.01</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('Suplemento Calcio + Vitamina D', 21.99, '../Imagenes/Img-Ofertas/VitaminaD.avif')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
 
-    <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-32%</span>
-            <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
-            <img src="../Imagenes/Img-Ofertas/Pack-Resfrio.webp" alt="Pack Cuidado Respiratorio" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 1 día</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">Pack Cuidado Respiratorio</h3>
-            <p class="descripcion-promo">Completo para aliviar síntomas de gripe</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.25.99</span>
-                <span class="precio-tachado">S/.38.5</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.12.51</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
-     <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-18%</span>
-            
-            <img src="../Imagenes/Img-Ofertas/NANwebp.webp" alt="Formula-Lactea" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 6 días</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">NAN MaxiLata 1.1kg</h3>
-            <p class="descripcion-promo">NAN® 1 Fórmula Láctea Infantil de Inicio en Polvo 1.1kg OPTIPRO</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.123.66</span>
-                <span class="precio-tachado">S/.150.80</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.27.14</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
-     <article class="tarjeta-promo">
-        <div class="caja-imagen-promo">
-            <span class="etiqueta-descuento">-22%</span>
-            <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
-            <img src="../Imagenes/Img-Ofertas/EUCERIN.webp" alt="protector-Solar" class="imagen-promo">
-        </div>
-        <div class="caja-temporizador">
-            <i class="fa-regular fa-clock icono-reloj"></i>
-            <span class="texto-temporizador">Termina en 7 día</span>
-        </div>
-        <div class="info-promo">
-            <h3 class="titulo-promo">Protector Solar 50+ FPS</h3>
-            <p class="descripcion-promo">Eucerin Sun Hydro Fluid con Color | Tono Claro</p>
-            <div class="precios-promo">
-                <span class="precio-rebajado">S/.81.90</span>
-                <span class="precio-tachado">S/105.00</span>
-            </div>
-            <p class="texto-ahorro">Ahorras S/.23.10</p>
-            <button class="boton-aprovechar"><i class="fa-solid fa-cart-shopping"></i> Aprovechar Oferta</button>
-        </div>
-    </article>
-    
+            <!-- Oferta 4: Pack Cuidado Respiratorio -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-32%</span>
+                    <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
+                    <img src="../Imagenes/Img-Ofertas/Pack-Resfrio.webp" alt="Pack Cuidado Respiratorio" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 1 día</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">Pack Cuidado Respiratorio</h3>
+                    <p class="descripcion-promo">Completo para aliviar síntomas de gripe</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.25.99</span>
+                        <span class="precio-tachado">S/.38.5</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.12.51</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('Pack Cuidado Respiratorio', 25.99, '../Imagenes/Img-Ofertas/Pack-Resfrio.webp')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
 
-</section>
+            <!-- Oferta 5: NAN MaxiLata 1.1kg -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-18%</span>
+                    <img src="../Imagenes/Img-Ofertas/NANwebp.webp" alt="Formula-Lactea" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 6 días</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">NAN MaxiLata 1.1kg</h3>
+                    <p class="descripcion-promo">NAN® 1 Fórmula Láctea Infantil de Inicio en Polvo 1.1kg OPTIPRO</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.123.66</span>
+                        <span class="precio-tachado">S/.150.80</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.27.14</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('NAN MaxiLata 1.1kg', 123.66, '../Imagenes/Img-Ofertas/NANwebp.webp')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
+
+            <!-- Oferta 6: Protector Solar 50+ FPS -->
+            <article class="tarjeta-promo">
+                <div class="caja-imagen-promo">
+                    <span class="etiqueta-descuento">-22%</span>
+                    <span class="etiqueta-estado estado-claro">Última Oportunidad</span>
+                    <img src="../Imagenes/Img-Ofertas/EUCERIN.webp" alt="protector-Solar" class="imagen-promo">
+                </div>
+                <div class="caja-temporizador">
+                    <i class="fa-regular fa-clock icono-reloj"></i>
+                    <span class="texto-temporizador">Termina en 7 días</span>
+                </div>
+                <div class="info-promo">
+                    <h3 class="titulo-promo">Protector Solar 50+ FPS</h3>
+                    <p class="descripcion-promo">Eucerin Sun Hydro Fluid con Color | Tono Claro</p>
+                    <div class="precios-promo">
+                        <span class="precio-rebajado">S/.81.90</span>
+                        <span class="precio-tachado">S/105.00</span>
+                    </div>
+                    <p class="texto-ahorro">Ahorras S/.23.10</p>
+                    <button class="boton-aprovechar" onclick="agregarAlCarrito('Protector Solar 50+ FPS', 81.90, '../Imagenes/Img-Ofertas/EUCERIN.webp')"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+                </div>
+            </article>
+        </section>
+
         <section class="banner-promocional">
             <div class="banner-contenido-izq">
                 <h2 class="titulo-banner">¡Descuentos hasta del 40%!</h2>
@@ -202,13 +205,11 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="pie-pagina">
         <div class="contenedor">
             <div class="pie-superior">
-                
                 <div class="columna-pie">
                     <div class="logo-pie">
                         <div class="logo-icono-pie">V</div>
@@ -221,7 +222,6 @@
                         <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Enlaces Rápidos</h4>
                     <ul class="lista-pie">
@@ -232,7 +232,6 @@
                         <li><a href="Nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Atención al Cliente</h4>
                     <ul class="lista-pie">
@@ -243,30 +242,16 @@
                         <li><a href="#">Política de Privacidad</a></li>
                     </ul>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Contáctanos</h4>
                     <ul class="lista-contacto">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i> 
-                            <span>Av. 8 de Octubre , Trujillo, Perú </span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i> 
-                            <span>+51 975 986 119 </span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i> 
-                            <span>ayhurena.21@icloud.com </span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i> 
-                            <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span>
-                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Av. 8 de Octubre , Trujillo, Perú</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+51 975 986 119</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>ayhurena.21@icloud.com</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span></li>
                     </ul>
                 </div>
             </div>
-
             <div class="pie-medio">
                 <div class="bloque-izquierdo">
                     <span class="texto-pago">Métodos de pago aceptados:</span>
@@ -277,23 +262,45 @@
                         <span class="etiqueta-pago"><img src="../Imagenes/Logo-pago/Pago-Efectivo.jpg" alt="Efectivo"></span>
                     </div>
                 </div>
-
                 <div class="libro-reclamaciones">
                     <span class="texto-libro">Libro de Reclamaciones:</span>
                     <a href="Reclamaciones.html">
-                        
-                     <img src="../Imagenes/Logo-pago/LibroReclamaciones.png" alt="Libro de Reclamaciones">
-                        
+                        <img src="../Imagenes/Logo-pago/LibroReclamaciones.png" alt="Libro de Reclamaciones">
                     </a>
                 </div>
             </div>
-
             <div class="pie-inferior">
                 <p>&copy; 2026 Vidsafarma. Todos los derechos reservados.</p>
-                
             </div>
         </div>
     </footer>
 
+    <!-- ========== CARRITO DE COMPRAS ========== -->
+    <div class="overlay-carrito" id="overlay-carrito" onclick="toggleCarrito()"></div>
+    <div class="panel-carrito" id="panel-carrito">
+        <div class="panel-carrito-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="cerrar-carrito" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div class="panel-carrito-body" id="lista-carrito">
+            <!-- Aquí se renderizan los productos con JavaScript -->
+        </div>
+        <div class="panel-carrito-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="total-carrito">S/ 0.00</span>
+            </div>
+            <div class="botones-accion">
+                <button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar</button>
+                <button class="btn-finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div id="notificacion-carrito"></div>
+
+    <!-- Cargar JavaScript del carrito -->
+    <script src="../js/carrito.js"></script>
 </body>
 </html>
