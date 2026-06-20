@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envíos y Entregas - Vidsafarma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styleEnvios.css">
+</head>
+<body>
+
+    <!-- CABECERA MINIMALISTA -->
+    <header class="cabecera">
+        <div class="cabecera-superior contenedor">
+            <div class="caja-logo">
+                <div class="logo-icono">V</div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">Vidsafarma</span>
+                    <span class="logo-subtitulo">Centro de Ayuda</span>
+                </div>
+            </div>
+            
+            <div class="contenedor-buscador-principal">
+                <form class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar sobre envíos, zonas...">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </form>
+                <div class="mensaje-error" id="errorBusqueda"></div>
+            </div>
+            
+            <div class="cabecera-acciones">
+                <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Botón de volver a la tienda -->
+                <a href="../../HtmlPrincipal/Index.html" class="boton-volver"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO ENVÍOS -->
+    <main class="contenido-envios contenedor">
+        <section class="encabezado-envios">
+            <h1 class="titulo-pagina-envios">Políticas de Envío</h1>
+            <p class="subtitulo-pagina-envios">Conoce nuestras zonas de reparto, tiempos de entrega y consideraciones especiales para que tus medicamentos lleguen siempre a tiempo.</p>
+        </section>
+
+        <section class="contenedor-principal-envios">
+            
+            <!-- Menú lateral de navegación de Envíos -->
+            <aside class="menu-categorias-envios">
+                <button class="btn-cat-envios activo" onclick="mostrarCategoriaEnvios('cobertura', this)">
+                    <i class="fa-solid fa-map-location-dot"></i> Zonas de Cobertura
+                </button>
+                <button class="btn-cat-envios" onclick="mostrarCategoriaEnvios('tiempos', this)">
+                    <i class="fa-solid fa-stopwatch"></i> Tiempos de Entrega
+                </button>
+                <button class="btn-cat-envios" onclick="mostrarCategoriaEnvios('tarifas', this)">
+                    <i class="fa-solid fa-money-bill-wave"></i> Costos y Tarifas
+                </button>
+                <button class="btn-cat-envios" onclick="mostrarCategoriaEnvios('condiciones', this)">
+                    <i class="fa-solid fa-temperature-arrow-down"></i> Condiciones Especiales
+                </button>
+            </aside>
+
+            <!-- Área de Información (Acordeón) -->
+            <div class="lista-info-envios">
+                
+                <!-- Categoría: Zonas de Cobertura -->
+                <div class="grupo-envios activo" id="envios-cobertura">
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Envío Local (Trujillo y distritos)</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Llegamos con nuestra propia flota de motorizados a todo el casco urbano de Trujillo, incluyendo distritos principales como Víctor Larco, La Esperanza, El Porvenir, Florencia de Mora y Huanchaco.</p>
+                        </div>
+                    </div>
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Envíos Nacionales (Provincias)</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Llegamos a nivel nacional a través de agencias aliadas como Olva Courier y Shalom. El envío se realiza con la modalidad de recojo en agencia o entrega a domicilio, dependiendo de la disponibilidad en tu ciudad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Tiempos de Entrega -->
+                <div class="grupo-envios" id="envios-tiempos" style="display: none;">
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Servicio Express (Urgencias)</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Para emergencias médicas dentro de Trujillo, ofrecemos envío Express. Tu pedido será despachado de inmediato y llegará a tu puerta en un máximo de <strong>60 a 90 minutos</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Servicio Regular (Local y Nacional)</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>El servicio local regular toma entre 2 y 4 horas hábiles. Para pedidos nacionales, el tiempo de tránsito estándar es de 24 a 48 horas hábiles desde el momento de la confirmación del pago.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Costos y Tarifas -->
+                <div class="grupo-envios" id="envios-tarifas" style="display: none;">
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>¿A partir de cuánto el envío es gratis?</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Todos los pedidos mayores a <strong>S/. 50.00</strong> disfrutan de <strong>Delivery GRATIS</strong> dentro del casco urbano de Trujillo.</p>
+                        </div>
+                    </div>
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Tarifas estándar y recargos</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Pedidos menores a S/. 50.00 tienen una tarifa plana local de S/. 5.00. Para envíos nacionales, el costo depende de las tarifas vigentes de la agencia de transportes seleccionada, el cual se cancela en destino (pago en agencia).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Condiciones Especiales -->
+                <div class="grupo-envios" id="envios-condiciones" style="display: none;">
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Medicamentos con Cadena de Frío (Refrigerados)</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Las insulinas, vacunas y otros medicamentos termosensibles se envían en empaques térmicos especializados con geles refrigerantes. Estos envíos <strong>solo están disponibles para Trujillo metropolitano</strong> para garantizar su eficacia.</p>
+                        </div>
+                    </div>
+                    <div class="item-envios">
+                        <button class="pregunta-envios" onclick="toggleEnvios(this)">
+                            <span>Recepción de pedidos y titularidad</span>
+                            <i class="fa-solid fa-chevron-down icono-envios"></i>
+                        </button>
+                        <div class="respuesta-envios">
+                            <p>Por tu seguridad, los medicamentos solo pueden ser recibidos por una persona mayor de edad portando su DNI. En caso de medicamentos psicotrópicos, debe recibirlos obligatoriamente el titular de la receta.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INFORMATIVO SIMPLE -->
+    <footer class="pie-pagina-informativo">
+        <div class="contenedor">
+            <p><strong>¿No encontraste lo que buscabas?</strong> Contáctanos a <a href="mailto:ayhurena.21@icloud.com">ayhurena.21@icloud.com</a> o llámanos al <strong>+51 975 986 119</strong>.</p>
+            <p class="copyright">&copy; 2026 Vidsafarma. Tu salud, nuestra prioridad. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/Envios.js" defer></script>
+</body>
+</html>

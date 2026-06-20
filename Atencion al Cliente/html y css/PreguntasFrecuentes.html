@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Vidsafarma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="stylePreguntasFrecuentes.css">
+</head>
+<body>
+
+    <!-- CABECERA MINIMALISTA -->
+    <header class="cabecera">
+        <div class="cabecera-superior contenedor">
+            <div class="caja-logo">
+                <div class="logo-icono">V</div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">Vidsafarma</span>
+                    <span class="logo-subtitulo">Centro de Ayuda</span>
+                </div>
+            </div>
+            
+            <div class="contenedor-buscador-principal">
+                <form class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar tu duda aquí...">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </form>
+                <div class="mensaje-error" id="errorBusqueda"></div>
+            </div>
+            
+            <div class="cabecera-acciones">
+                <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Botón de volver a la tienda -->
+                <a href="../../HtmlPrincipal/Index.html" class="boton-volver"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PREGUNTAS FRECUENTES -->
+    <main class="contenido-faq contenedor">
+        <section class="encabezado-faq">
+            <h1 class="titulo-pagina-faq">¿Cómo podemos ayudarte?</h1>
+            <p class="subtitulo-pagina-faq">Encuentra respuestas rápidas a las dudas más comunes sobre envíos, pagos y nuestros servicios farmacéuticos.</p>
+        </section>
+
+        <section class="contenedor-principal-faq">
+            
+            <!-- Menú lateral de navegación de FAQ -->
+            <aside class="menu-categorias-faq">
+                <button class="btn-cat-faq activo" onclick="mostrarCategoriaFaq('pedidos', this)">
+                    <i class="fa-solid fa-truck-fast"></i> Envíos y Pedidos
+                </button>
+                <button class="btn-cat-faq" onclick="mostrarCategoriaFaq('pagos', this)">
+                    <i class="fa-solid fa-credit-card"></i> Métodos de Pago
+                </button>
+                <button class="btn-cat-faq" onclick="mostrarCategoriaFaq('devoluciones', this)">
+                    <i class="fa-solid fa-box-open"></i> Cambios y Devoluciones
+                </button>
+                <button class="btn-cat-faq" onclick="mostrarCategoriaFaq('recetas', this)">
+                    <i class="fa-solid fa-file-prescription"></i> Recetas Médicas
+                </button>
+            </aside>
+
+            <!-- Área de Preguntas y Respuestas (Acordeón) -->
+            <div class="lista-preguntas-faq">
+                
+                <!-- Categoría: Envíos y Pedidos -->
+                <div class="grupo-faq activo" id="faq-pedidos">
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Cuánto tiempo tarda en llegar mi pedido?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>Los envíos dentro de la ciudad de Trujillo demoran entre 2 y 4 horas hábiles. Para envíos a nivel nacional, el tiempo estimado es de 24 a 48 horas dependiendo de la provincia a través de nuestras agencias aliadas.</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Cuál es el costo del delivery?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>El costo de envío local es de S/. 5.00. Sin embargo, para compras superiores a S/. 50.00, el delivery es totalmente <strong>gratuito</strong> dentro del casco urbano.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Métodos de Pago -->
+                <div class="grupo-faq" id="faq-pagos" style="display: none;">
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Qué métodos de pago aceptan?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>Aceptamos múltiples métodos de pago para tu comodidad: Tarjetas de crédito/débito (Visa, Mastercard), billeteras digitales (Yape, Plin), transferencias bancarias y pago en efectivo a contraentrega (solo disponible en Trujillo).</p>
+                        </div>
+                    </div>
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Es seguro pagar con tarjeta en la web?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>Totalmente. Utilizamos pasarelas de pago certificadas y encriptación SSL de extremo a extremo para garantizar que tus datos financieros estén siempre protegidos y nunca sean almacenados en nuestros servidores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Cambios y Devoluciones -->
+                <div class="grupo-faq" id="faq-devoluciones" style="display: none;">
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Puedo devolver un medicamento?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>Por políticas de salubridad y normativas del Ministerio de Salud (MINSA), no aceptamos devoluciones de medicamentos una vez entregados, a menos que el producto presente defectos de fábrica o la fecha de caducidad esté vencida al momento de la entrega.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Recetas Médicas -->
+                <div class="grupo-faq" id="faq-recetas" style="display: none;">
+                    <div class="item-faq">
+                        <button class="pregunta-faq" onclick="toggleFaq(this)">
+                            <span>¿Cómo compro medicamentos que requieren receta?</span>
+                            <i class="fa-solid fa-chevron-down icono-faq"></i>
+                        </button>
+                        <div class="respuesta-faq">
+                            <p>Para productos que exigen prescripción, debes subir una foto nítida de tu receta médica vigente antes de agregar el producto al carrito. Nuestro equipo de químicos farmacéuticos la validará en minutos para proceder con el envío.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INFORMATIVO SIMPLE -->
+    <footer class="pie-pagina-informativo">
+        <div class="contenedor">
+            <p><strong>¿No encontraste lo que buscabas?</strong> Contáctanos a <a href="mailto:ayhurena.21@icloud.com">ayhurena.21@icloud.com</a> o llámanos al <strong>+51 975 986 119</strong>.</p>
+            <p class="copyright">&copy; 2026 Vidsafarma. Tu salud, nuestra prioridad. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/PreguntasFrecuentes.js" defer></script>
+</body>
+</html>
