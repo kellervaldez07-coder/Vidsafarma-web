@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Vidsafarma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="stylePoliticasPrivacidad.css">
+</head>
+<body>
+
+    <!-- CABECERA MINIMALISTA -->
+    <header class="cabecera">
+        <div class="cabecera-superior contenedor">
+            <div class="caja-logo">
+                <div class="logo-icono">V</div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">Vidsafarma</span>
+                    <span class="logo-subtitulo">Centro Legal</span>
+                </div>
+            </div>
+            
+            <div class="contenedor-buscador-principal">
+                <form class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar sobre tus datos, derechos...">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </form>
+                <div class="mensaje-error" id="errorBusqueda"></div>
+            </div>
+            
+            <div class="cabecera-acciones">
+                <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Botón de volver a la tienda -->
+                <a href="../../HtmlPrincipal/Index.html" class="boton-volver"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRIVACIDAD -->
+    <main class="contenido-privacidad contenedor">
+        <section class="encabezado-privacidad">
+            <h1 class="titulo-pagina-privacidad">Política de Privacidad</h1>
+            <p class="subtitulo-pagina-privacidad">Tu confianza es nuestra prioridad. Conoce cómo recopilamos, protegemos y utilizamos tu información personal y de salud.</p>
+        </section>
+
+        <section class="contenedor-principal-privacidad">
+            
+            <!-- Menú lateral de navegación -->
+            <aside class="menu-categorias-privacidad">
+                <button class="btn-cat-privacidad activo" onclick="mostrarCategoriaPrivacidad('recopilacion', this)">
+                    <i class="fa-solid fa-database"></i> Recopilación de Datos
+                </button>
+                <button class="btn-cat-privacidad" onclick="mostrarCategoriaPrivacidad('uso', this)">
+                    <i class="fa-solid fa-user-doctor"></i> Uso de la Información
+                </button>
+                <button class="btn-cat-privacidad" onclick="mostrarCategoriaPrivacidad('seguridad', this)">
+                    <i class="fa-solid fa-lock"></i> Protección y Seguridad
+                </button>
+                <button class="btn-cat-privacidad" onclick="mostrarCategoriaPrivacidad('derechos', this)">
+                    <i class="fa-solid fa-scale-balanced"></i> Derechos ARCO
+                </button>
+            </aside>
+
+            <!-- Área de Información (Acordeón) -->
+            <div class="lista-info-privacidad">
+                
+                <!-- Categoría: Recopilación de Datos -->
+                <div class="grupo-privacidad activo" id="privacidad-recopilacion">
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>¿Qué datos personales recopilamos?</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Recopilamos datos de identificación (nombres, DNI, teléfono, correo electrónico), datos de envío (dirección) y, en el caso de medicamentos restringidos, datos sensibles de salud al solicitarte una fotografía de tu receta médica física o electrónica.</p>
+                        </div>
+                    </div>
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>Información financiera</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Vidsafarma <strong>no almacena los datos de tus tarjetas de crédito o débito</strong>. Toda transacción es procesada mediante pasarelas de pago externas y encriptadas, las cuales cumplen con los más altos estándares de seguridad (PCI-DSS).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Uso de la Información -->
+                <div class="grupo-privacidad" id="privacidad-uso" style="display: none;">
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>¿Para qué utilizamos tus datos?</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Tus datos se usan exclusivamente para procesar tus compras, emitir tus comprobantes de pago (Boleta o Factura), realizar el envío de los productos a tu domicilio, validar recetas médicas y comunicarnos contigo ante cualquier eventualidad con tu pedido.</p>
+                        </div>
+                    </div>
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>Compartición con terceros</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Bajo ninguna circunstancia vendemos, alquilamos o comercializamos tus datos personales a terceros. Únicamente compartimos la información estrictamente necesaria con nuestros socios logísticos (empresas de transporte o courier) para que puedan entregar tu pedido.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Protección y Seguridad -->
+                <div class="grupo-privacidad" id="privacidad-seguridad" style="display: none;">
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>Protocolos de seguridad informática</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Nuestra plataforma cuenta con certificados de seguridad SSL, asegurando que toda la información que viaja entre tu dispositivo y nuestros servidores se encuentre totalmente encriptada e ilegible para terceros.</p>
+                        </div>
+                    </div>
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>Manejo de recetas médicas (Datos Sensibles)</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Las recetas médicas que subes a nuestra web son tratadas como datos sensibles. Solo son visualizadas por nuestros Químicos Farmacéuticos titulados para autorizar la dispensación del medicamento, conforme a las regulaciones del MINSA.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Derechos ARCO -->
+                <div class="grupo-privacidad" id="privacidad-derechos" style="display: none;">
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>¿Qué son los Derechos ARCO?</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Respaldados por la Ley N° 29733 (Ley de Protección de Datos Personales de Perú), tienes derecho al Acceso, Rectificación, Cancelación y Oposición (ARCO) sobre los datos personales que tenemos almacenados sobre ti.</p>
+                        </div>
+                    </div>
+                    <div class="item-privacidad">
+                        <button class="pregunta-privacidad" onclick="togglePrivacidad(this)">
+                            <span>¿Cómo ejercer tus derechos?</span>
+                            <i class="fa-solid fa-chevron-down icono-privacidad"></i>
+                        </button>
+                        <div class="respuesta-privacidad">
+                            <p>Para solicitar la actualización, corrección o eliminación total de tus datos y/o cuenta de nuestro sistema, simplemente envíanos un correo a <strong>ayhurena.21@icloud.com</strong> con el asunto "Derechos ARCO", adjuntando una copia de tu DNI para validar tu identidad. Atenderemos tu solicitud en el plazo establecido por la ley.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INFORMATIVO SIMPLE -->
+    <footer class="pie-pagina-informativo">
+        <div class="contenedor">
+            <p><strong>¿Tienes consultas sobre tu privacidad?</strong> Contáctanos a <a href="mailto:ayhurena.21@icloud.com">ayhurena.21@icloud.com</a> o llámanos al <strong>+51 975 986 119</strong>.</p>
+            <p class="copyright">&copy; 2026 Vidsafarma. Tu salud, nuestra prioridad. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/PoliticasPrivacidad.js" defer></script>
+</body>
+</html>
