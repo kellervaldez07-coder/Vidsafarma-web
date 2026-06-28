@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Vidsafarma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../Css/styleNosotros.css">
+</head>
+<body>
+
+    <header class="cabecera">
+        <div class="cabecera-superior contenedor">
+            <div class="caja-logo">
+                <div class="logo-icono">V</div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">Vidsafarma</span>
+                    <span class="logo-subtitulo">Tu salud, nuestra prioridad</span>
+                </div>
+            </div>
+            
+            <div class="contenedor-buscador-principal">
+                <form class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar en Nosotros">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </form>
+                <div class="mensaje-error" id="errorBusqueda"></div>
+            </div>
+            
+            <div class="cabecera-acciones">
+                <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div class="caja-carrito">
+                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
+                    </a>
+                </div>
+
+                <button class="menu-toggle" id="btnMenu" aria-label="Abrir menú de navegación">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="navegacion-principal" id="navegacionPrincipal">
+            <ul class="lista-enlaces contenedor">
+                <li><a href="../Html/Index.html" class="enlace">Inicio</a></li>
+                <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
+                <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
+                <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
+                <li><a href="../Html/Nosotros.html" class="enlace activo">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-nosotros contenedor">
+        <section class="encabezado-nosotros">
+            <h1 class="titulo-pagina-nosotros">Sobre Nosotros</h1>
+            <p class="subtitulo-pagina-nosotros">Conoce más sobre Vidsafarma, nuestra historia, valores y compromiso inquebrantable con tu bienestar.</p>
+        </section>
+
+        <section class="mision-vision-container">
+             
+                <div class="tarjeta-mv mision-verde">
+                    <div class="mv-icono-caja">
+                          <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="mv-info mv-mision">
+                        <h3>Nuestra Misión</h3>
+                        <p>Proporcionar productos farmacéuticos 
+                            de la más alta calidad y servicios de salud accesibles 
+                            a nuestra comunidad, garantizando el bienestar de nuestros clientes mediante 
+                            una atención profesional, personalizada y comprometida.</p>
+                    </div>
+                </div>
+            
+
+            <div class="tarjeta-mv vision-azul">
+                <div class="mv-icono-caja">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <div class="mv-info mv-vision">
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser reconocidos como la farmacia líder en nuestra región, destacando por nuestra innovación tecnológica, excelencia en el servicio y compromiso absoluto con la salud comunitaria.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion-valores">
+            <div class="encabezado-valores">
+                <h2 class="titulo-valores">Nuestros Valores</h2>
+            </div>
+            <div class="cuadricula-valores">
+                <div class="valor-item">
+                    <i class="fa-solid fa-award icono-valor"></i>
+                    <h4>Calidad</h4>
+                    <p>Ofrecemos productos certificados y servicios que cumplen con los más altos estándares.</p>
+                </div>
+                <div class="valor-item">
+                    <i class="fa-solid fa-shield-halved icono-valor"></i>
+                    <h4>Confianza</h4>
+                    <p>Construimos relaciones sólidas basadas en la honestidad y la transparencia total.</p>
+                </div>
+                <div class="valor-item">
+                    <i class="fa-solid fa-user-doctor icono-valor"></i>
+                    <h4>Profesionalismo</h4>
+                    <p>Nuestro equipo está altamente capacitado y se actualiza constantemente.</p>
+                </div>
+                <div class="valor-item">
+                    <i class="fa-solid fa-people-carry-box icono-valor"></i>
+                    <h4>Compromiso Social</h4>
+                    <p>Promovemos activamente la educación en salud preventiva en nuestra comunidad.</p>
+                </div>
+                <div class="valor-item">
+                    <i class="fa-solid fa-lightbulb icono-valor"></i>
+                    <h4>Innovación</h4>
+                    <p>Adoptamos tecnologías modernas para agilizar y mejorar nuestros servicios.</p>
+                </div>
+                <div class="valor-item">
+                    <i class="fa-solid fa-hands-holding-child icono-valor"></i>
+                    <h4>Empatía</h4>
+                    <p>Brindamos un trato humano, cálido y personalizado a cada cliente.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <div class="pie-superior">
+                <div class="columna-pie">
+                    <div class="logo-pie">
+                        <div class="logo-icono-pie">V</div>
+                        <span class="logo-titulo-pie">Vidsafarma</span>
+                    </div>
+                    <p class="descripcion-pie">Tu farmacia de confianza desde hace 25 años. Comprometidos con tu salud y bienestar.</p>
+                    <div class="redes-sociales">
+                       <a href="https://www.instagram.com" title="Instagram" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://web.whatsapp.com" title="WhatsApp" class="icono-red"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="columna-pie">
+                    <h4 class="titulo-columna">Enlaces Rápidos</h4>
+                    <ul class="lista-pie"> 
+                        <li><a href="../Html/Index.html" class="enlace">Inicio</a></li>
+                        <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
+                        <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
+                        <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
+                        <li><a href="../Html/Nosotros.html" class="enlace activo">Nosotros</a></li>
+                    </ul>
+                </div>
+
+               <div class="columna-pie">
+                    <h4 class="titulo-columna">Atención al Cliente</h4>
+                    <ul class="lista-pie">
+                        <li><a href="../../Footer/Atencion del Cliente/Html/PreguntasFrecuentes.html">Preguntas Frecuentes</a></li>
+                        <li><a href="../../Footer/Atencion del Cliente/Html/Envios.html">Envíos</a></li>
+                        <li><a href="../../Footer/Atencion del Cliente/Html/Devoluciones.html">Devoluciones</a></li>
+                        <li><a href="../../Footer/Atencion del Cliente/Html/TerminosCondiciones.html">Términos y Condiciones</a></li>
+                        <li><a href="../../Footer/Atencion del Cliente/Html/PoliticasPrivacidad.html">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="columna-pie">
+                    <h4 class="titulo-columna">Contáctanos</h4>
+                    <ul class="lista-contacto">
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Av. 8 de Octubre , Trujillo, Perú</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+51 975 986 119</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>ayhurena.21@icloud.com</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pie-medio">
+                <div class="bloque-izquierdo">
+                    <span class="texto-pago">Métodos de pago aceptados:</span>
+                    <div class="metodos-pago">
+                        <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/visa-logo.png" alt="Visa"></span>
+                        <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/yape.png" alt="Yape"></span>
+                        <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/Plin.webp" alt="Plin"></span>
+                        <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/Pago-Efectivo.jpg" alt="Efectivo"></span>
+                    </div>
+                </div>
+
+                <div class="libro-reclamaciones">
+                    <span class="texto-libro">Libro de Reclamaciones:</span>
+                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">
+                     <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                    </a>
+                </div>
+           </div>
+
+            <div class="pie-inferior">
+                <p>&copy; 2026 Vidsafarma. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="../JavaScript/Nosotros.js" defer></script>
+</body>
+</html>

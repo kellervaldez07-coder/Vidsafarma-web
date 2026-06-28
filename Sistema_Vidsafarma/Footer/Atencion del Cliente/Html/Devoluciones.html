@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambios y Devoluciones - Vidsafarma</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../Css/styleDevoluciones.css">
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header class="cabecera">
+        <div class="cabecera-superior contenedor">
+            <div class="caja-logo">
+                <div class="logo-icono">V</div>
+                <div class="logo-texto">
+                    <span class="logo-titulo">Vidsafarma</span>
+                    <span class="logo-subtitulo">Centro de Ayuda</span>
+                </div>
+            </div>
+            
+            <div class="contenedor-buscador-principal">
+                <form class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar sobre reembolsos, cambios...">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </form>
+                <div class="mensaje-error" id="errorBusqueda"></div>
+            </div>
+            
+            <div class="cabecera-acciones">
+                <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Botón de volver a la tienda -->
+                <a href="../../../Principal/Html/Index.html"" class="boton-volver"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO DEVOLUCIONES -->
+    <main class="contenido-devoluciones contenedor">
+        <section class="encabezado-devoluciones">
+            <h1 class="titulo-pagina-devoluciones">Cambios y Devoluciones</h1>
+            <p class="subtitulo-pagina-devoluciones">Conoce los requisitos, plazos y procedimientos para solicitar un cambio o reembolso de tus productos farmacéuticos de manera rápida y segura.</p>
+        </section>
+
+        <section class="contenedor-principal-devoluciones">
+            
+            <!-- Menú lateral de navegación -->
+            <aside class="menu-categorias-devoluciones">
+                <button class="btn-cat-devoluciones activo" onclick="mostrarCategoriaDevoluciones('condiciones', this)">
+                    <i class="fa-solid fa-clipboard-list"></i> Condiciones Generales
+                </button>
+                <button class="btn-cat-devoluciones" onclick="mostrarCategoriaDevoluciones('proceso', this)">
+                    <i class="fa-solid fa-person-walking-arrow-loop-left"></i> Proceso de Devolución
+                </button>
+                <button class="btn-cat-devoluciones" onclick="mostrarCategoriaDevoluciones('reembolsos', this)">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Reembolsos
+                </button>
+                <button class="btn-cat-devoluciones" onclick="mostrarCategoriaDevoluciones('defectuosos', this)">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Productos Defectuosos
+                </button>
+            </aside>
+
+            <!-- Área de Información (Acordeón) -->
+            <div class="lista-info-devoluciones">
+                
+                <!-- Categoría: Condiciones Generales -->
+                <div class="grupo-devoluciones activo" id="devoluciones-condiciones">
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>Devolución de Medicamentos</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Por disposición de la Dirección General de Medicamentos, Insumos y Drogas (DIGEMID) y por razones de salubridad, <strong>no se aceptan cambios ni devoluciones de medicamentos</strong> una vez que han salido de nuestras instalaciones y entregados al cliente, salvo que presenten defectos de fábrica.</p>
+                        </div>
+                    </div>
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>Artículos de Cuidado Personal y Belleza</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Los productos de dermocosmética, cuidado personal, higiene y equipos médicos pueden ser devueltos en un plazo máximo de <strong>7 días calendario</strong>, siempre y cuando se encuentren en su empaque original sellado, sin uso y con los precintos intactos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Proceso de Devolución -->
+                <div class="grupo-devoluciones" id="devoluciones-proceso" style="display: none;">
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>¿Cuáles son los pasos a seguir?</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Para iniciar una solicitud, comunícate con nosotros vía correo a <strong>ayhurena.21@icloud.com</strong> o a nuestro WhatsApp, enviando el número de tu pedido, foto de la boleta/factura y evidencia en fotos/video del estado del producto. Nuestro equipo evaluará el caso en un plazo de 24 horas.</p>
+                        </div>
+                    </div>
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>¿Quién asume el costo de envío de la devolución?</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Si la devolución es por un error nuestro (producto incorrecto o defectuoso), Vidsafarma asume el 100% de los costos de recojo y reenvío. Si el cambio es por decisión del cliente (en productos permitidos), el costo del flete debe ser asumido por el cliente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Reembolsos -->
+                <div class="grupo-devoluciones" id="devoluciones-reembolsos" style="display: none;">
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>Tiempos de procesamiento de reembolsos</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Una vez aprobado el reembolso, si pagaste con Yape o Plin, el dinero se devuelve en un plazo máximo de <strong>48 horas hábiles</strong>. Si el pago fue mediante Tarjeta de Crédito/Débito, el extorno puede reflejarse en tu cuenta entre <strong>15 a 30 días hábiles</strong>, dependiendo exclusivamente de tu banco emisor.</p>
+                        </div>
+                    </div>
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>Notas de crédito</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Si prefieres no esperar los tiempos bancarios, puedes optar por recibir una <strong>Nota de Crédito Virtual</strong> instantánea por el valor total de tu devolución, la cual podrás usar en tu próxima compra en Vidsafarma sin fecha de caducidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categoría: Productos Defectuosos -->
+                <div class="grupo-devoluciones" id="devoluciones-defectuosos" style="display: none;">
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>¿Qué hago si recibí un producto en mal estado?</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Si el empaque está dañado, las pastillas rotas o los frascos derramados, no manipules el producto. Repórtalo inmediatamente (máximo 24 horas después de la entrega) a nuestro canal de soporte para gestionar el cambio inmediato o reembolso total.</p>
+                        </div>
+                    </div>
+                    <div class="item-devoluciones">
+                        <button class="pregunta-devoluciones" onclick="toggleDevoluciones(this)">
+                            <span>Problemas con la fecha de vencimiento</span>
+                            <i class="fa-solid fa-chevron-down icono-devoluciones"></i>
+                        </button>
+                        <div class="respuesta-devoluciones">
+                            <p>Vidsafarma garantiza que todos sus productos tienen fechas de caducidad óptimas. Si por algún error logístico recibes un producto vencido, el cambio se realizará de manera inmediata y prioritaria.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER INFORMATIVO SIMPLE -->
+    <footer class="pie-pagina-informativo">
+        <div class="contenedor">
+            <p><strong>¿Dudas con tu devolución?</strong> Contáctanos a <a href="mailto:ayhurena.21@icloud.com">ayhurena.21@icloud.com</a> o llámanos al <strong>+51 975 986 119</strong>.</p>
+            <p class="copyright">&copy; 2026 Vidsafarma. Tu salud, nuestra prioridad. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../JavaScript/Devoluciones.js" defer></script>
+</body>
+</html>
