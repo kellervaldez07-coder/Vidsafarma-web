@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Vidsafarma</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="../Css/styleNosotros.css">
+    <link rel="stylesheet" href="../Css/carrito.css">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
                     <span class="logo-subtitulo">Tu salud, nuestra prioridad</span>
                 </div>
             </div>
-            
+
             <div class="contenedor-buscador-principal">
                 <form class="barra-busqueda" id="formBusqueda">
                     <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
@@ -32,19 +32,17 @@
                 </form>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
-            
+
             <div class="cabecera-acciones">
                 <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <div class="caja-carrito">
-                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito" onclick="toggleCarrito(); return false;">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
                     </a>
                 </div>
-
                 <button class="menu-toggle" id="btnMenu" aria-label="Abrir menú de navegación">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -53,11 +51,11 @@
 
         <nav class="navegacion-principal" id="navegacionPrincipal">
             <ul class="lista-enlaces contenedor">
-                <li><a href="../Html/Index.html" class="enlace">Inicio</a></li>
-                <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
-                <li><a href="../Html/Nosotros.html" class="enlace activo">Nosotros</a></li>
+                <li><a href="Index.html" class="enlace">Inicio</a></li>
+                <li><a href="Ofertas.html" class="enlace">Ofertas</a></li>
+                <li><a href="Categorias.html" class="enlace">Categorías</a></li>
+                <li><a href="BlogSalud.html" class="enlace">Blog de Salud</a></li>
+                <li><a href="Nosotros.html" class="enlace activo">Nosotros</a></li>
             </ul>
         </nav>
     </header>
@@ -69,20 +67,15 @@
         </section>
 
         <section class="mision-vision-container">
-             
-                <div class="tarjeta-mv mision-verde">
-                    <div class="mv-icono-caja">
-                          <i class="fa-solid fa-hand-holding-heart"></i>
-                    </div>
-                    <div class="mv-info mv-mision">
-                        <h3>Nuestra Misión</h3>
-                        <p>Proporcionar productos farmacéuticos 
-                            de la más alta calidad y servicios de salud accesibles 
-                            a nuestra comunidad, garantizando el bienestar de nuestros clientes mediante 
-                            una atención profesional, personalizada y comprometida.</p>
-                    </div>
+            <div class="tarjeta-mv mision-verde">
+                <div class="mv-icono-caja">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>
-            
+                <div class="mv-info mv-mision">
+                    <h3>Nuestra Misión</h3>
+                    <p>Proporcionar productos farmacéuticos de la más alta calidad y servicios de salud accesibles a nuestra comunidad, garantizando el bienestar de nuestros clientes mediante una atención profesional, personalizada y comprometida.</p>
+                </div>
+            </div>
 
             <div class="tarjeta-mv vision-azul">
                 <div class="mv-icono-caja">
@@ -99,32 +92,38 @@
             <div class="encabezado-valores">
                 <h2 class="titulo-valores">Nuestros Valores</h2>
             </div>
+
             <div class="cuadricula-valores">
                 <div class="valor-item">
                     <i class="fa-solid fa-award icono-valor"></i>
                     <h4>Calidad</h4>
                     <p>Ofrecemos productos certificados y servicios que cumplen con los más altos estándares.</p>
                 </div>
+
                 <div class="valor-item">
                     <i class="fa-solid fa-shield-halved icono-valor"></i>
                     <h4>Confianza</h4>
                     <p>Construimos relaciones sólidas basadas en la honestidad y la transparencia total.</p>
                 </div>
+
                 <div class="valor-item">
                     <i class="fa-solid fa-user-doctor icono-valor"></i>
                     <h4>Profesionalismo</h4>
                     <p>Nuestro equipo está altamente capacitado y se actualiza constantemente.</p>
                 </div>
+
                 <div class="valor-item">
                     <i class="fa-solid fa-people-carry-box icono-valor"></i>
                     <h4>Compromiso Social</h4>
                     <p>Promovemos activamente la educación en salud preventiva en nuestra comunidad.</p>
                 </div>
+
                 <div class="valor-item">
                     <i class="fa-solid fa-lightbulb icono-valor"></i>
                     <h4>Innovación</h4>
                     <p>Adoptamos tecnologías modernas para agilizar y mejorar nuestros servicios.</p>
                 </div>
+
                 <div class="valor-item">
                     <i class="fa-solid fa-hands-holding-child icono-valor"></i>
                     <h4>Empatía</h4>
@@ -144,7 +143,7 @@
                     </div>
                     <p class="descripcion-pie">Tu farmacia de confianza desde hace 25 años. Comprometidos con tu salud y bienestar.</p>
                     <div class="redes-sociales">
-                       <a href="https://www.instagram.com" title="Instagram" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com" title="Instagram" class="icono-red"><i class="fa-brands fa-instagram"></i></a>
                         <a href="https://web.whatsapp.com" title="WhatsApp" class="icono-red"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                     </div>
@@ -152,16 +151,16 @@
 
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Enlaces Rápidos</h4>
-                    <ul class="lista-pie"> 
-                        <li><a href="../Html/Index.html" class="enlace">Inicio</a></li>
-                        <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                        <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                        <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
-                        <li><a href="../Html/Nosotros.html" class="enlace activo">Nosotros</a></li>
+                    <ul class="lista-pie">
+                        <li><a href="Index.html">Inicio</a></li>
+                        <li><a href="Ofertas.html">Ofertas</a></li>
+                        <li><a href="Categorias.html">Categorías</a></li>
+                        <li><a href="BlogSalud.html">Blog de Salud</a></li>
+                        <li><a href="Nosotros.html" class="enlace activo">Nosotros</a></li>
                     </ul>
                 </div>
 
-               <div class="columna-pie">
+                <div class="columna-pie">
                     <h4 class="titulo-columna">Atención al Cliente</h4>
                     <ul class="lista-pie">
                         <li><a href="../../Footer/Atencion del Cliente/Html/PreguntasFrecuentes.html">Preguntas Frecuentes</a></li>
@@ -171,6 +170,7 @@
                         <li><a href="../../Footer/Atencion del Cliente/Html/PoliticasPrivacidad.html">Política de Privacidad</a></li>
                     </ul>
                 </div>
+
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Contáctanos</h4>
                     <ul class="lista-contacto">
@@ -196,18 +196,47 @@
                 <div class="libro-reclamaciones">
                     <span class="texto-libro">Libro de Reclamaciones:</span>
                     <a href="../../Footer/LibroReclamos/Reclamaciones.html">
-                     <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                        <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
                     </a>
                 </div>
-           </div>
+            </div>
 
             <div class="pie-inferior">
                 <p>&copy; 2026 Vidsafarma. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    
 
+    <!-- ========================================== -->
+    <!-- ========== CARRITO DE COMPRAS ========== -->
+    <!-- ========================================== -->
+    <div class="overlay-carrito" id="overlay-carrito" onclick="toggleCarrito()"></div>
+
+    <div class="panel-carrito" id="panel-carrito">
+        <div class="panel-carrito-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="cerrar-carrito" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div class="panel-carrito-body" id="lista-carrito">
+            <!-- Aquí se renderizan los productos con JavaScript -->
+        </div>
+        <div class="panel-carrito-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="total-carrito">S/ 0.00</span>
+            </div>
+            <div class="botones-accion">
+                <button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar</button>
+                <button class="btn-finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div id="notificacion-carrito"></div>
+
+    <!-- Cargar JavaScript del carrito -->
+    <script src="../JavaScript/carrito.js"></script>
     <script src="../JavaScript/Nosotros.js" defer></script>
 </body>
 </html>

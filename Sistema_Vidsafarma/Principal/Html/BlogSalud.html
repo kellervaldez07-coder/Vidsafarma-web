@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleBlog.css">
+    <link rel="stylesheet" href="../Css/carrito.css">
 </head>
 <body>
 
@@ -20,7 +21,7 @@
                     <span class="logo-subtitulo">Tu salud, nuestra prioridad</span>
                 </div>
             </div>
-            
+
             <div class="contenedor-buscador-principal">
                 <form class="barra-busqueda" id="formBusqueda">
                     <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
@@ -29,19 +30,17 @@
                 </form>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
-            
+
             <div class="cabecera-acciones">
                 <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <div class="caja-carrito">
-                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito" onclick="toggleCarrito(); return false;">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
                     </a>
                 </div>
-                 <!--Toggle-->
                 <button class="menu-toggle" id="btnMenu" aria-label="Abrir menú de navegación">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -50,16 +49,16 @@
 
         <nav class="navegacion-principal" id="navegacionPrincipal">
             <ul class="lista-enlaces contenedor">
-                <li><a href="../Html/Index.html" class="enlace">Inicio</a></li>
-                <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                <li><a href="../Html/BlogSalud.html" class="enlace activo">Blog de Salud</a></li>
-                <li><a href="../Html/Nosotros.html" class="enlace">Nosotros</a></li>
+                <li><a href="Index.html" class="enlace">Inicio</a></li>
+                <li><a href="Ofertas.html" class="enlace">Ofertas</a></li>
+                <li><a href="Categorias.html" class="enlace">Categorías</a></li>
+                <li><a href="BlogSalud.html" class="enlace activo">Blog de Salud</a></li>
+                <li><a href="Nosotros.html" class="enlace">Nosotros</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- CONTENIDO DEL BLOG  -->
+    <!-- CONTENIDO DEL BLOG -->
     <main class="contenido-blog contenedor">
         <div class="encabezado-seccion-blog">
             <h1 class="titulo-blog">Blog de Salud y Bienestar</h1>
@@ -69,8 +68,7 @@
         <!-- Artículo Destacado Principal -->
         <article class="post-destacado">
             <div class="imagen-destacada">
-                <!-- Puedes cambiar la ruta de la imagen según tu carpeta -->
-                <img src="Blog/Imagenes-Blog/Salud-Preventiva.jpg" alt="Salud Preventiva" >
+                <img src="Blog/Imagenes-Blog/Salud-Preventiva.jpg" alt="Salud Preventiva">
             </div>
             <div class="info-destacada">
                 <span class="etiqueta-blog bg-azul-claro">Salud Preventiva</span>
@@ -84,14 +82,13 @@
             </div>
         </article>
 
-        
         <h3 class="titulo-seccion-recientes">Artículos Recientes</h3>
+
         <div class="grid-articulos">
-            
-            
+            <!-- Artículo 1: Vitamina C -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="Blog/Imagenes-Blog/VitaminaC.jpg" alt="Vitamina C" >
+                    <img src="Blog/Imagenes-Blog/VitaminaC.jpg" alt="Vitamina C">
                     <span class="etiqueta-flotante bg-naranja">Nutrición</span>
                 </div>
                 <div class="info-post">
@@ -101,10 +98,10 @@
                 </div>
             </article>
 
-           
+            <!-- Artículo 2: Cuidado Invierno -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="Blog/Imagenes-Blog/CuidadoInvierno.jpg" alt="Skincare" >
+                    <img src="Blog/Imagenes-Blog/CuidadoInvierno.jpg" alt="Skincare">
                     <span class="etiqueta-flotante bg-verde-esmeralda">Cuidado Personal</span>
                 </div>
                 <div class="info-post">
@@ -114,10 +111,10 @@
                 </div>
             </article>
 
-            
+            <!-- Artículo 3: Sueño Bebé -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="Blog/Imagenes-Blog/SueñoBebee.jpg" alt="Bebé durmiendo" >
+                    <img src="Blog/Imagenes-Blog/SueñoBebee.jpg" alt="Bebé durmiendo">
                     <span class="etiqueta-flotante bg-rosa">Maternidad Infantil</span>
                 </div>
                 <div class="info-post">
@@ -127,10 +124,10 @@
                 </div>
             </article>
 
-            
+            <!-- Artículo 4: Botiquín -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="Blog/Imagenes-Blog/Botiquin.jpg" alt="Botiquín" >
+                    <img src="Blog/Imagenes-Blog/Botiquin.jpg" alt="Botiquín">
                     <span class="etiqueta-flotante bg-rojo">Primeros Auxilios</span>
                 </div>
                 <div class="info-post">
@@ -139,11 +136,11 @@
                     <a href="Blog/Blog_Leer/BotiquinCasa.html" class="enlace-post">Leer más ›</a>
                 </div>
             </article>
-            
-            
+
+            <!-- Artículo 5: Presión Arterial -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="Blog/Imagenes-Blog/PresionArterial.jpg" alt="Presión arterial" >
+                    <img src="Blog/Imagenes-Blog/PresionArterial.jpg" alt="Presión arterial">
                     <span class="etiqueta-flotante bg-morado">Salud General</span>
                 </div>
                 <div class="info-post">
@@ -153,10 +150,10 @@
                 </div>
             </article>
 
-            
+            <!-- Artículo 6: Impacto del Estrés -->
             <article class="tarjeta-post">
                 <div class="caja-imagen-post">
-                    <img src="blog/Imagenes-Blog/ImpactoEstres.webp" alt="Salud Mental" >
+                    <img src="Blog/Imagenes-Blog/ImpactoEstres.webp" alt="Salud Mental">
                     <span class="etiqueta-flotante bg-cyan">Salud Mental</span>
                 </div>
                 <div class="info-post">
@@ -165,11 +162,10 @@
                     <a href="Blog/Blog_Leer/ImpactoEstres.html" class="enlace-post">Leer más ›</a>
                 </div>
             </article>
-
         </div>
     </main>
 
-    <!-- FOOTER  -->
+    <!-- FOOTER -->
     <footer class="pie-pagina">
         <div class="contenedor">
             <div class="pie-superior">
@@ -185,18 +181,19 @@
                         <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
+
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Enlaces Rápidos</h4>
                     <ul class="lista-pie">
-                        <li><a href=../Html/Index.html" class="enlace">Inicio</a></li>
-                        <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                        <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                        <li><a href="../Html/BlogSalud.html" class="enlace activo">Blog de Salud</a></li>
-                        <li><a href="../Html/Nosotros.html" class="enlace">Nosotros</a></li>
+                        <li><a href="Index.html">Inicio</a></li>
+                        <li><a href="Ofertas.html">Ofertas</a></li>
+                        <li><a href="Categorias.html">Categorías</a></li>
+                        <li><a href="BlogSalud.html" class="enlace activo">Blog de Salud</a></li>
+                        <li><a href="Nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
 
-               <div class="columna-pie">
+                <div class="columna-pie">
                     <h4 class="titulo-columna">Atención al Cliente</h4>
                     <ul class="lista-pie">
                         <li><a href="../../Footer/Atencion del Cliente/Html/PreguntasFrecuentes.html">Preguntas Frecuentes</a></li>
@@ -217,6 +214,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="pie-medio">
                 <div class="bloque-izquierdo">
                     <span class="texto-pago">Métodos de pago aceptados:</span>
@@ -227,22 +225,51 @@
                         <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/Pago-Efectivo.jpg" alt="Efectivo"></span>
                     </div>
                 </div>
-            
-                    <div class="libro-reclamaciones">
-                       <span class="texto-libro">Libro de Reclamaciones:</span>
-                        <a href="../../Footer/LibroReclamos/Reclamaciones.html">
-                         <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
-                        </a>
+
+                <div class="libro-reclamaciones">
+                    <span class="texto-libro">Libro de Reclamaciones:</span>
+                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">
+                        <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                    </a>
                 </div>
-                </div>
+            </div>
+
             <div class="pie-inferior">
                 <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-   
-    <script src="../JavaScript/Blog.js" defer></script>
+    <!-- ========================================== -->
+    <!-- ========== CARRITO DE COMPRAS ========== -->
+    <!-- ========================================== -->
+    <div class="overlay-carrito" id="overlay-carrito" onclick="toggleCarrito()"></div>
 
+    <div class="panel-carrito" id="panel-carrito">
+        <div class="panel-carrito-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="cerrar-carrito" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div class="panel-carrito-body" id="lista-carrito">
+            <!-- Aquí se renderizan los productos con JavaScript -->
+        </div>
+        <div class="panel-carrito-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="total-carrito">S/ 0.00</span>
+            </div>
+            <div class="botones-accion">
+                <button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar</button>
+                <button class="btn-finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div id="notificacion-carrito"></div>
+
+    <!-- Cargar JavaScript del carrito -->
+    <script src="../JavaScript/carrito.js"></script>
+    <script src="../JavaScript/Blog.js" defer></script>
 </body>
 </html>

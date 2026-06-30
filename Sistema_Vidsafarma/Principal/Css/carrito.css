@@ -1,0 +1,326 @@
+/* ========================================
+   ESTILOS DEL CARRITO - VIDSAFARMA
+   ======================================== */
+
+/* --- Panel lateral del carrito --- */
+.panel-carrito {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    max-width: 90vw;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+}
+
+.panel-carrito.abierto {
+    right: 0;
+}
+
+/* --- Overlay (fondo oscuro) --- */
+.overlay-carrito {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+    display: none;
+}
+
+.overlay-carrito.activo {
+    display: block;
+}
+
+/* --- Cabecera del panel --- */
+.panel-carrito-header {
+    background: var(--azul-footer, #223b97);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.panel-carrito-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.panel-carrito-header .cerrar-carrito {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.panel-carrito-header .cerrar-carrito:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* --- Lista de productos --- */
+.panel-carrito-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 25px;
+}
+
+#lista-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* --- Producto individual en el carrito --- */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e5e8ec;
+    transition: box-shadow 0.3s;
+}
+
+.carrito-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.carrito-item-img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: white;
+    padding: 4px;
+    border: 1px solid #e5e8ec;
+}
+
+.carrito-item-info {
+    flex: 1;
+}
+
+.carrito-item-info h4 {
+    font-size: 14px;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.carrito-item-precio {
+    color: var(--verde-esmeralda, #19b782);
+    font-weight: 700;
+    font-size: 15px;
+    margin: 4px 0;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.carrito-item-cantidad button {
+    background: #e5e8ec;
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrito-item-cantidad button:hover {
+    background: #cbd5e1;
+}
+
+.carrito-item-cantidad span {
+    font-weight: 700;
+    font-size: 15px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.carrito-item-eliminar {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.carrito-item-eliminar:hover {
+    background: #fee2e2;
+}
+
+/* --- Estado vacío --- */
+.carrito-vacio {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+}
+
+.carrito-vacio i {
+    font-size: 48px;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.carrito-vacio p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #64748b;
+    margin: 0;
+}
+
+.carrito-vacio span {
+    font-size: 14px;
+}
+
+/* --- Pie del carrito (total + botones) --- */
+.panel-carrito-footer {
+    padding: 20px 25px;
+    border-top: 1px solid #e5e8ec;
+    background: #f8fafc;
+    flex-shrink: 0;
+}
+
+.panel-carrito-footer .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.panel-carrito-footer .total span:first-child {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.panel-carrito-footer .total #total-carrito {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--verde-esmeralda, #19b782);
+}
+
+.panel-carrito-footer .botones-accion {
+    display: flex;
+    gap: 10px;
+}
+
+.panel-carrito-footer .botones-accion button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.panel-carrito-footer .botones-accion button:hover {
+    transform: scale(1.02);
+}
+
+.btn-vaciar {
+    background: #fee2e2;
+    color: #e74c3c;
+}
+
+.btn-vaciar:hover {
+    background: #fecaca;
+}
+
+.btn-finalizar {
+    background: var(--verde-esmeralda, #19b782);
+    color: white;
+}
+
+.btn-finalizar:hover {
+    background: var(--verde-hover, #149669);
+}
+
+/* --- Notificación flotante --- */
+#notificacion-carrito {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1b3280;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    z-index: 10000;
+    display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-family: 'Nunito', sans-serif;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .panel-carrito {
+        width: 100vw;
+        right: -100vw;
+    }
+    
+    .panel-carrito.abierto {
+        right: 0;
+    }
+    
+    .panel-carrito-header h2 {
+        font-size: 18px;
+    }
+    
+    .carrito-item {
+        padding: 10px;
+    }
+    
+    .carrito-item-info h4 {
+        font-size: 13px;
+    }
+    
+    .panel-carrito-footer .botones-accion {
+        flex-direction: column;
+    }
+}

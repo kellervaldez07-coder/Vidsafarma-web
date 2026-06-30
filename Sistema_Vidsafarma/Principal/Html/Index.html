@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleIndex.css">
-    
-    
-    
+    <link rel="stylesheet" href="../Css/carrito.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <header class="cabecera">
@@ -30,19 +30,17 @@
                 </div>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
-            
+
             <div class="cabecera-acciones">
                 <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <div class="caja-carrito">
-                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
+                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito" onclick="toggleCarrito(); return false;">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
                     </a>
                 </div>
-
                 <button class="menu-toggle" id="btnMenu" aria-label="Abrir menú de navegación">
                     <i class="fa-solid fa-bars"></i>
                 </button>
@@ -51,16 +49,17 @@
 
         <nav class="navegacion-principal" id="navegacionPrincipal">
             <ul class="lista-enlaces contenedor">
-                <li><a href=../Html/Index.html" class="enlace activo">Inicio</a></li>
-                <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
-                <li><a href="../Html/Nosotros.html" class="enlace">Nosotros</a></li>
+                <li><a href="Index.html" class="enlace activo">Inicio</a></li>
+                <li><a href="Ofertas.html" class="enlace">Ofertas</a></li>
+                <li><a href="Categorias.html" class="enlace">Categorías</a></li>
+                <li><a href="BlogSalud.html" class="enlace">Blog de Salud</a></li>
+                <li><a href="Nosotros.html" class="enlace">Nosotros</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contenido-principal contenedor">
+        
         <section class="seccion-hero">
             <div class="hero-textos">
                 <span class="etiqueta-confianza">Farmacia de Confianza</span>
@@ -78,7 +77,9 @@
         </section>
 
         <section class="seccion-caracteristicas">
+            
             <div class="grid-beneficios">
+                
                 <article class="beneficio">
                     <div class="icono-beneficio"><i class="fa-solid fa-pills"></i></div>
                     <div class="texto-beneficio">
@@ -110,18 +111,23 @@
                         <p>Personal calificado</p>
                     </div>
                 </article>
+
             </div>
 
             <div class="caja-experiencia">
                 <span class="numero-experiencia">25+</span>
                 <span class="texto-experiencia">Años de experiencia</span>
             </div>
+
         </section>
+
     </main>
 
     <footer class="pie-pagina">
         <div class="contenedor">
+            
             <div class="pie-superior">
+                
                 <div class="columna-pie">
                     <div class="logo-pie">
                         <div class="logo-icono-pie">V</div>
@@ -138,11 +144,11 @@
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Enlaces Rápidos</h4>
                     <ul class="lista-pie"> 
-                        <li><a href=../Html/Index.html" class="enlace activo">Inicio</a></li>
-                        <li><a href="../Html/Ofertas.html" class="enlace">Ofertas</a></li>
-                        <li><a href="../Html/Categorias.html" class="enlace">Categorías</a></li>
-                        <li><a href="../Html/BlogSalud.html" class="enlace">Blog de Salud</a></li>
-                        <li><a href="../Html/Nosotros.html" class="enlace">Nosotros</a></li>
+                        <li><a href="Index.html">Inicio</a></li>
+                        <li><a href="Ofertas.html">Ofertas</a></li>
+                        <li><a href="Categorias.html">Categorías</a></li>
+                        <li><a href="BlogSalud.html">Blog de Salud</a></li>
+                        <li><a href="Nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
 
@@ -162,8 +168,7 @@
                     <ul class="lista-contacto">
                         <li>
                             <i class="fa-solid fa-location-dot"></i> 
-                              <span>Av. 8 de Octubre , Trujillo, Perú </span>
-                            
+                            <span>Av. 8 de Octubre , Trujillo, Perú </span>
                         </li>
                         <li>
                             <i class="fa-solid fa-phone"></i> 
@@ -179,12 +184,13 @@
                         </li>
                     </ul>
                 </div>
+                
             </div>
 
             <div class="pie-medio">
                 <div class="bloque-izquierdo">
                     <span class="texto-pago">Métodos de pago aceptados:</span>
-                   <div class="metodos-pago">
+                    <div class="metodos-pago">
                         <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/visa-logo.png" alt="Visa"></span>
                         <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/yape.png" alt="Yape"></span>
                         <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/Plin.webp" alt="Plin"></span>
@@ -194,21 +200,52 @@
 
                 <div class="libro-reclamaciones">
                     <span class="texto-libro">Libro de Reclamaciones:</span>
-                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">
-                     <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
+                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">    
+                        <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">   
                     </a>
                 </div>
            </div>
 
             <div class="pie-inferior">
-                <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>
+                <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>   
             </div>
+
         </div>
     </footer>
-     <script src="../DataProductosContenedor/DataProductos.js" defer></script>
-    <script src="../JavaScript/BarraBusqueda.js"></script>
-
-    <script src="../JavaScript/Index.js" defer></script>
     
+    <!-- ========================================== -->
+    <!-- ========== CARRITO DE COMPRAS ========== -->
+    <!-- ========================================== -->
+    <div class="overlay-carrito" id="overlay-carrito" onclick="toggleCarrito()"></div>
+
+    <div class="panel-carrito" id="panel-carrito">
+        <div class="panel-carrito-header">
+            <h2>🛒 Mi Carrito</h2>
+            <button class="cerrar-carrito" onclick="toggleCarrito()">✕</button>
+        </div>
+        <div class="panel-carrito-body" id="lista-carrito">
+            <!-- Aquí se renderizan los productos con JavaScript -->
+        </div>
+        <div class="panel-carrito-footer">
+            <div class="total">
+                <span>Total:</span>
+                <span id="total-carrito">S/ 0.00</span>
+            </div>
+            <div class="botones-accion">
+                <button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar</button>
+                <button class="btn-finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div id="notificacion-carrito"></div>
+
+    <!-- Cargar JavaScript del carrito -->
+    <script src="../JavaScript/carrito.js"></script>
+    <script src="../DataProductosContenedor/DataProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js"></script>
+    <script src="../JavaScript/Index.js" defer></script>
+
 </body>
 </html>
