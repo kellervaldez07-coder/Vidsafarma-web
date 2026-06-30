@@ -66,13 +66,13 @@ function cargarCarrito() {
     actualizarVistaCarrito();
 }
 
-// 7. Calcular total
-function calcularTotal() {
-    let total = 0;
+// 7. Calcular subtotal (sin IGV)
+function calcularSubtotal() {
+    let subtotal = 0;
     carrito.forEach(item => {
-        total += item.precio * item.cantidad;
+        subtotal += item.precio * item.cantidad;
     });
-    return total.toFixed(2);
+    return subtotal;
 }
 
 // 8. Contar productos
@@ -84,9 +84,11 @@ function contarProductos() {
     return total;
 }
 
-// 9. Actualizar vista del carrito
+// 9. Actualizar la vista del carrito
 function actualizarVistaCarrito() {
     const contenedor = document.getElementById('lista-carrito');
+    const subtotalElement = document.getElementById('subtotal-carrito');
+    const igvElement = document.getElementById('igv-carrito');
     const totalElement = document.getElementById('total-carrito');
     const contador = document.getElementById('contadorCarrito');
     
@@ -105,6 +107,8 @@ function actualizarVistaCarrito() {
                 <span>¡Empieza a agregar productos!</span>
             </div>
         `;
+        if (subtotalElement) subtotalElement.textContent = 'S/ 0.00';
+        if (igvElement) igvElement.textContent = 'S/ 0.00';
         if (totalElement) totalElement.textContent = 'S/ 0.00';
         return;
     }
@@ -132,8 +136,18 @@ function actualizarVistaCarrito() {
     
     contenedor.innerHTML = html;
     
+    const subtotal = calcularSubtotal();
+    const igv = subtotal * 0.18;
+    const total = subtotal + igv;
+    
+    if (subtotalElement) {
+        subtotalElement.textContent = `S/ ${subtotal.toFixed(2)}`;
+    }
+    if (igvElement) {
+        igvElement.textContent = `S/ ${igv.toFixed(2)}`;
+    }
     if (totalElement) {
-        totalElement.textContent = `S/ ${calcularTotal()}`;
+        totalElement.textContent = `S/ ${total.toFixed(2)}`;
     }
 }
 
@@ -174,7 +188,20 @@ function finalizarCompra() {
         mostrarNotificacion('⚠️ El carrito está vacío');
         return;
     }
-    alert(`✅ ¡Gracias por tu compra!\nTotal: S/ ${calcularTotal()}\n\nLos productos han sido agregados a tu pedido.`);
+    
+    const subtotal = calcularSubtotal();
+    const igv = subtotal * 0.18;
+    const total = subtotal + igv;
+    
+    alert(`✅ ¡Gracias por tu compra!\n\n` +
+          `📋 Resumen de tu pedido:\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `Subtotal:     S/ ${subtotal.toFixed(2)}\n` +
+          `IGV (18%):    S/ ${igv.toFixed(2)}\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━\n` +
+          `TOTAL:        S/ ${total.toFixed(2)}\n` +
+          `━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+          `Los productos han sido agregados a tu pedido.`);
 }
 
 // INICIALIZAR
