@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleCategorias.css">
     <link rel="stylesheet" href="../Css/carrito.css">
+    <link rel="stylesheet" href="../Css/modalBusqueda.css">
 </head>
 <body class="fondo-blanco-puro">
     <header class="cabecera">
@@ -25,6 +26,9 @@
                     <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
                     <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar Categoría">
                     <button type="submit" class="boton-buscar">Buscar</button>
+                </div>
+                <div id="modalResultados" class="modal-resultados oculto">
+                    <ul id="listaCoincidencias"></ul>
                 </div>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
@@ -146,9 +150,9 @@
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Contáctanos</h4>
                     <ul class="lista-contacto">
-                        <li><i class="fa-solid fa-location-dot"></i> <span>Av. 8 de Octubre , Trujillo, Perú </span></li>
-                        <li><i class="fa-solid fa-phone"></i> <span>+51 975 986 119 </span></li>
-                        <li><i class="fa-solid fa-envelope"></i> <span>ayhurena.21@icloud.com </span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Av. 8 de Octubre , Trujillo, Perú</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+51 975 986 119</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>ayhurena.21@icloud.com</span></li>
                         <li><i class="fa-regular fa-clock"></i> <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span></li>
                     </ul>
                 </div>
@@ -193,17 +197,14 @@
             <!-- Aquí se renderizan los productos con JavaScript -->
         </div>
         <div class="panel-carrito-footer">
-            <!-- Subtotal -->
             <div class="subtotal">
                 <span>Subtotal:</span>
                 <span id="subtotal-carrito">S/ 0.00</span>
             </div>
-            <!-- IGV (18%) -->
             <div class="igv">
                 <span>IGV (18%):</span>
                 <span id="igv-carrito">S/ 0.00</span>
             </div>
-            <!-- Total -->
             <div class="total">
                 <span>Total:</span>
                 <span id="total-carrito">S/ 0.00</span>
@@ -218,10 +219,11 @@
     <!-- Notificación flotante -->
     <div id="notificacion-carrito"></div>
 
-    <!-- Cargar JavaScript del carrito -->
+    <!-- Cargar JavaScript -->
     <script src="../JavaScript/carrito.js"></script>
     <script src="../DataProductosContenedor/DataProductos.js" defer></script>
     <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Categorias.js" defer></script>
 </body>
 </html>

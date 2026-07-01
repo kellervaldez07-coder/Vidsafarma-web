@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleIndex.css">
     <link rel="stylesheet" href="../Css/carrito.css">
+    <link rel="stylesheet" href="../Css/modalBusqueda.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -21,12 +22,15 @@
                     <span class="logo-subtitulo">Tu salud, nuestra prioridad</span>
                 </div>
             </div>
-            
+
             <div class="contenedor-buscador-principal">
-                <div class="barra-busqueda" id="formBusqueda" onsubmit="event.preventDefault();">
+                <div class="barra-busqueda" id="formBusqueda">
                     <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
-                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Estas en el Inicio, busca algo">
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar Categoría">
                     <button type="submit" class="boton-buscar">Buscar</button>
+                </div>
+                <div id="modalResultados" class="modal-resultados oculto">
+                    <ul id="listaCoincidencias"></ul>
                 </div>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
@@ -59,7 +63,6 @@
     </header>
 
     <main class="contenido-principal contenedor">
-        
         <section class="seccion-hero">
             <div class="hero-textos">
                 <span class="etiqueta-confianza">Farmacia de Confianza</span>
@@ -70,16 +73,13 @@
                     <a href="Ofertas.html" class="boton-secundario">Ofertas Especiales</a>
                 </div>
             </div>
-            
             <div class="hero-imagen-caja">
                 <img src="Principal.jpg" alt="Familia en la farmacia" class="imagen-farmacia">
             </div>
         </section>
 
         <section class="seccion-caracteristicas">
-            
             <div class="grid-beneficios">
-                
                 <article class="beneficio">
                     <div class="icono-beneficio"><i class="fa-solid fa-pills"></i></div>
                     <div class="texto-beneficio">
@@ -87,7 +87,6 @@
                         <p>100% garantizados</p>
                     </div>
                 </article>
-
                 <article class="beneficio">
                     <div class="icono-beneficio"><i class="fa-solid fa-truck-fast"></i></div>
                     <div class="texto-beneficio">
@@ -95,7 +94,6 @@
                         <p>Rápido y seguro</p>
                     </div>
                 </article>
-
                 <article class="beneficio">
                     <div class="icono-beneficio"><i class="fa-solid fa-heart-pulse"></i></div>
                     <div class="texto-beneficio">
@@ -103,7 +101,6 @@
                         <p>Siempre disponibles</p>
                     </div>
                 </article>
-
                 <article class="beneficio">
                     <div class="icono-beneficio"><i class="fa-solid fa-user-doctor"></i></div>
                     <div class="texto-beneficio">
@@ -111,23 +108,17 @@
                         <p>Personal calificado</p>
                     </div>
                 </article>
-
             </div>
-
             <div class="caja-experiencia">
                 <span class="numero-experiencia">25+</span>
                 <span class="texto-experiencia">Años de experiencia</span>
             </div>
-
         </section>
-
     </main>
 
     <footer class="pie-pagina">
         <div class="contenedor">
-            
             <div class="pie-superior">
-                
                 <div class="columna-pie">
                     <div class="logo-pie">
                         <div class="logo-icono-pie">V</div>
@@ -140,10 +131,9 @@
                         <a href="https://web.facebook.com" title="Facebook" class="icono-red"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Enlaces Rápidos</h4>
-                    <ul class="lista-pie"> 
+                    <ul class="lista-pie">
                         <li><a href="Index.html">Inicio</a></li>
                         <li><a href="Ofertas.html">Ofertas</a></li>
                         <li><a href="Categorias.html">Categorías</a></li>
@@ -151,7 +141,6 @@
                         <li><a href="Nosotros.html">Nosotros</a></li>
                     </ul>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Atención al Cliente</h4>
                     <ul class="lista-pie">
@@ -162,31 +151,16 @@
                         <li><a href="../../Footer/Atencion del Cliente/Html/PoliticasPrivacidad.html">Política de Privacidad</a></li>
                     </ul>
                 </div>
-
                 <div class="columna-pie">
                     <h4 class="titulo-columna">Contáctanos</h4>
                     <ul class="lista-contacto">
-                        <li>
-                            <i class="fa-solid fa-location-dot"></i> 
-                            <span>Av. 8 de Octubre , Trujillo, Perú </span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-phone"></i> 
-                            <span>+51 975 986 119 </span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i> 
-                            <span>ayhurena.21@icloud.com </span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-clock"></i> 
-                            <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span>
-                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Av. 8 de Octubre , Trujillo, Perú</span></li>
+                        <li><i class="fa-solid fa-phone"></i> <span>+51 975 986 119</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>ayhurena.21@icloud.com</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span></li>
                     </ul>
                 </div>
-                
             </div>
-
             <div class="pie-medio">
                 <div class="bloque-izquierdo">
                     <span class="texto-pago">Métodos de pago aceptados:</span>
@@ -197,22 +171,19 @@
                         <span class="etiqueta-pago"><img src="../../Footer/Imagenes_Footer/Pago-Efectivo.jpg" alt="Efectivo"></span>
                     </div>
                 </div>
-
                 <div class="libro-reclamaciones">
                     <span class="texto-libro">Libro de Reclamaciones:</span>
-                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">    
-                        <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">   
+                    <a href="../../Footer/LibroReclamos/Reclamaciones.html">
+                        <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
                     </a>
                 </div>
-           </div>
-
-            <div class="pie-inferior">
-                <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>   
             </div>
-
+            <div class="pie-inferior">
+                <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>
+            </div>
         </div>
     </footer>
-    
+
     <!-- ========================================== -->
     <!-- ========== CARRITO DE COMPRAS ========== -->
     <!-- ========================================== -->
@@ -227,17 +198,14 @@
             <!-- Aquí se renderizan los productos con JavaScript -->
         </div>
         <div class="panel-carrito-footer">
-            <!-- Subtotal -->
             <div class="subtotal">
                 <span>Subtotal:</span>
                 <span id="subtotal-carrito">S/ 0.00</span>
             </div>
-            <!-- IGV (18%) -->
             <div class="igv">
                 <span>IGV (18%):</span>
                 <span id="igv-carrito">S/ 0.00</span>
             </div>
-            <!-- Total -->
             <div class="total">
                 <span>Total:</span>
                 <span id="total-carrito">S/ 0.00</span>
@@ -252,11 +220,11 @@
     <!-- Notificación flotante -->
     <div id="notificacion-carrito"></div>
 
-    <!-- Cargar JavaScript del carrito -->
+    <!-- Cargar JavaScript -->
     <script src="../JavaScript/carrito.js"></script>
     <script src="../DataProductosContenedor/DataProductos.js" defer></script>
-    <script src="../JavaScript/BarraBusqueda.js"></script>
+    <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Index.js" defer></script>
-
 </body>
 </html>

@@ -1,13 +1,10 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     initMenuToggle();
     initDarkMode();
-   
-   
+    actualizarContadorHeader(); 
 });
 
-/**
+/*
  MENÚ DE NAVEGACIÓN toggle
  */
 const initMenuToggle = () => {
@@ -31,7 +28,7 @@ const initMenuToggle = () => {
 };
 
 /*
-   (LocalStorage)
+   LocalStorage
  */
 const initDarkMode = () => {
     const btnDarkMode = document.getElementById('btnDarkMode');
@@ -60,5 +57,4 @@ const initDarkMode = () => {
         }
     });
 };
-
 

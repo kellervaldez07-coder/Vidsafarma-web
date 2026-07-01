@@ -44,7 +44,7 @@ function renderizarProductosVidsafarma(){
 
             htmlTarjetas +=`
 
-               <div class="item-prod-mini tarjeta-producto">
+               <div class="item-prod-mini tarjeta-producto" id="producto-${prod.id}">
 
                  <img src="../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}" alt="${prod.nombre}" class="img-prod-real img-producto">
 
@@ -72,13 +72,9 @@ function renderizarProductosVidsafarma(){
 
                       ${htmlTarjetas}
 
-                      
-
                   </div>
 
               </div>  
-
- 
 
         `;
 
@@ -88,8 +84,6 @@ function renderizarProductosVidsafarma(){
 
     contenedorPrincipal.innerHTML=htmlCompleto;
 
-    
-
 }
 
 // aquí cargamos primero el html de categorias antes de que ese ejecute el js
@@ -97,9 +91,5 @@ function renderizarProductosVidsafarma(){
 document.addEventListener('DOMContentLoaded', () => {
 
     renderizarProductosVidsafarma();
-
-    
-
-    // Logica del carrito de compras proximo ...
 
 });

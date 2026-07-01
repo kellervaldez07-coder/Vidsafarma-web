@@ -1,0 +1,74 @@
+/* Variables de los Colores del modal */
+:root {
+    --color-fondo-resultados: #ffffff;
+    --color-border: #e0e0e0;
+    --color-box: rgba(0, 0, 0, 0.15);
+    --color-resultados: #333333;
+    --color-lista-hover: #f0f8ff; 
+    --mensaje-error: #db2828;
+    --color-separador: #f0f0f0; 
+}
+
+.contenedor-buscador-principal {
+    position: relative;
+}
+
+/* Estilos para el modal desplegable */
+.modal-resultados {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-fondo-resultados);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--color-box);    
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 8px;
+}
+
+/* Clase para ocultar el modal cuando no hay búsqueda */
+.modal-resultados.oculto {
+    display: none;
+}
+
+/* Estilos de la lista de coincidencias */
+.modal-resultados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-resultados li {
+    padding: 12px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--color-separador);
+    font-family: 'Nunito', sans-serif;
+    color: var(--color-resultados);
+    transition: background-color 0.2s ease;
+}
+
+/* Quitar el borde al último elemento de la lista */
+.modal-resultados li:last-child {
+    border-bottom: none;
+}
+
+.modal-resultados li:hover {
+    background-color: var(--color-lista-hover); 
+    font-weight: 600;
+}
+
+.mensaje-error {
+    color: var(--mensaje-error);
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    margin-top: 4px;
+    display: none; 
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    z-index: 999;
+}
