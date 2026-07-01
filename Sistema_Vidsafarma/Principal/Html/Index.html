@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleIndex.css">
-    
+    <link rel="stylesheet" href="../Css/modalBusqueda.css">
     
     
 </head>
@@ -22,12 +22,16 @@
                 </div>
             </div>
             
-            <div class="contenedor-buscador-principal">
-                <div class="barra-busqueda" id="formBusqueda" onsubmit="event.preventDefault();">
+            
+           <div class="contenedor-buscador-principal">
+                <div class="barra-busqueda" id="formBusqueda">
                     <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
-                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Estas en el Inicio, busca algo">
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar Categoría">
                     <button type="submit" class="boton-buscar">Buscar</button>
                 </div>
+                     <div id="modalResultados" class="modal-resultados oculto">
+                       <ul id="listaCoincidencias"></ul>
+                     </div>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
             
@@ -206,8 +210,8 @@
         </div>
     </footer>
      <script src="../DataProductosContenedor/DataProductos.js" defer></script>
-    <script src="../JavaScript/BarraBusqueda.js"></script>
-
+     <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Index.js" defer></script>
     
 </body>

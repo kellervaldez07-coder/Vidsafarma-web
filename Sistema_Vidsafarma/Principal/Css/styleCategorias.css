@@ -57,6 +57,9 @@
     --texto-blanco-mutado: rgba(255, 255, 255, 0.6);
     --borde-blanco-opaco: rgba(255, 255, 255, 0.1);
     --box-shadow-busqueda:rgba(0, 196, 154, 0.2);
+
+    --amarillo-notificacion:#ffeb3b;
+    --texto-naranja-notificacion: rgb(236, 133, 6);
 }
 
 /*
@@ -1125,6 +1128,7 @@ body {
         background-color: var(--azul-oscuro); 
     } 
 }
+
 
 /* 
     MODO OSCURO

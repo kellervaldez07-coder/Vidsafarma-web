@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleCategorias.css">
+    <link rel="stylesheet" href="../Css/modalBusqueda.css">
 </head>
 <body class="fondo-blanco-puro">
 
@@ -26,6 +27,9 @@
                     <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar Categoría">
                     <button type="submit" class="boton-buscar">Buscar</button>
                 </div>
+                     <div id="modalResultados" class="modal-resultados oculto">
+                       <ul id="listaCoincidencias"></ul>
+                     </div>
                 <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
             
@@ -33,6 +37,7 @@
                 <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
                     <i class="fa-solid fa-moon"></i>
                 </button>
+                <!--EAQUI VA EL CARRITO DE COMPRAS SU ENLACE  -->
 
                 <div class="caja-carrito">
                     <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
@@ -40,6 +45,8 @@
                         <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
                     </a>
                 </div>
+                
+
 
                 <button class="menu-toggle" id="btnMenu" aria-label="Abrir menú de navegación">
                     <i class="fa-solid fa-bars"></i>
@@ -179,16 +186,12 @@
                 <p>&copy;2026 Vidsafarma. Todos los derechos reservados.</p>
             </div>
         </div>
-    </footer>
-    <script src="../DataProductosContenedor/DataProductos.js" defer></script>
-    
-    <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+   </footer>
 
+    
+    <script src="../DataProductosContenedor/DataProductos.js" defer></script>
+    <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Categorias.js" defer></script>
 </body>
-</html>
-    
-    
-</body>
-
 </html>

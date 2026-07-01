@@ -19,17 +19,17 @@ function renderizarProductosVidsafarma(){
         const productosDeEstaCategoria=data.filter(producto => producto.categoria===panel.id);
         let htmlTarjetas='';
 
-        //creamos la estructura par acada tarjeta de producto
+      //creamos la estructura par acada tarjeta de producto
         productosDeEstaCategoria.forEach(prod => {
             htmlTarjetas +=`
-               <div class="item-prod-mini tarjeta-producto">
+               <div class="item-prod-mini tarjeta-producto" id="producto-${prod.id}">
                  <img src="../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}" alt="${prod.nombre}" class="img-prod-real img-producto">
                  <h4 class="nombre-producto">${prod.nombre}</h4>
                  <p class="precio-rebajado">s/. ${prod.precio.toFixed(2)}</p>
-                 <button class="boton-agregar">Agregar</button>
+                <button class="boton-agregar" onclick="agregarAlCarrito(${prod.id})">Agregar</button>
                </div>  
             `;
-        })
+        }),
         //unimos el panel  de la categoria con sus tarjetas
         htmlCompleto+=`
               <div class="panel-productos" id="panel-${panel.id}">
@@ -52,5 +52,5 @@ function renderizarProductosVidsafarma(){
 document.addEventListener('DOMContentLoaded', ()=> {
     renderizarProductosVidsafarma();
     
-    // Logica del carrito de compras proximo ...
+    
 }); 

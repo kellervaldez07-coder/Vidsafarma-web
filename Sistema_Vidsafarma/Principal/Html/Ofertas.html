@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../Css/styleOfertas.css">
+    <link rel="stylesheet" href="../Css/modalBusqueda.css">
+
 </head>
 <body>
 
@@ -20,13 +22,19 @@
                 </div>
             </div>
             
+             
             <div class="contenedor-buscador-principal">
-                      <form class="barra-busqueda">
-                          <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
-                          <input type="text" class="campo-busqueda" placeholder="Buscar Ofertas">
-                          <button type="submit" class="boton-buscar">Buscar</button>
-                      </form>
+                <div class="barra-busqueda" id="formBusqueda">
+                    <i class="fa-solid fa-magnifying-glass icono-buscar"></i>
+                    <input type="text" class="campo-busqueda" id="inputBusqueda" placeholder="Buscar Categoría">
+                    <button type="submit" class="boton-buscar">Buscar</button>
+                </div>
+                     <div id="modalResultados" class="modal-resultados oculto">
+                       <ul id="listaCoincidencias"></ul>
+                     </div>
+                <div class="mensaje-error" id="errorBusqueda"></div>
             </div>
+
             
             <div class="cabecera-acciones">
                 <button id="btnDarkMode" class="boton-control" aria-label="Cambiar tema visual">
@@ -315,8 +323,9 @@
             </div>
         </div>
     </footer>
-    
-
+     <script src="../DataProductosContenedor/DataProductos.js" defer></script>
+     <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
+    <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Ofertas.js" defer></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
 /* Vidsafarma - Módulo JavaScript (Página Nosotros) */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initMenuToggle();
+  initMenuToggle();
     initDarkMode();
+});
+
+  
    
 
 /* 1. MENÚ DE NAVEGACIÓN toggle*/
