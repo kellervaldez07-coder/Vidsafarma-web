@@ -237,21 +237,24 @@ body {
     text-decoration: none;
     padding: 5px;
 }
-
-.contador-carrito {
-    position: absolute;
-    top: -5px;
-    right: -10px;
+.enlace-carrito:hover {
+    color: var(--verde-esmeralda);
+}
+.contador-carrito { 
+    position: absolute; 
+    top: -5px; 
+    right: -10px; 
     background: var(--verde-esmeralda); 
-    color: var(--blanco);
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--blanco); 
+    font-size: 15px; 
+    font-weight: bold; 
+    border-radius: 8px; 
+    width: 18px; 
+    height: 18px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align:center;
 }
 
 /* Navegación */
@@ -520,9 +523,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* =========================================
+/* 
    BANNER PROMOCIONAL
-   ========================================= */
+ */
 .banner-promocional {
     background: linear-gradient(90deg, var(--azul-oscuro) 0%, var(--verde-esmeralda) 100%);
     border-radius: 12px;

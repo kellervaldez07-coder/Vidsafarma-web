@@ -61,7 +61,7 @@ const data = [
     { id: 55, nombre: "Baberos Desechables x 20 unidades", precio: 22.90, categoria: "bebe", imagen: "Baberos.webp" },
     { id: 56, nombre: "Esponja de Baño Natural para Bebé", precio: 35.50, categoria: "bebe", imagen: "Esponja.webp" },
     { id: 57, nombre: "Hisopos de Seguridad de Algodón Q-Soft x 30", precio: 12.20, categoria: "bebe", imagen: "HisoposBaby.webp" },
-    { id: 58, nombre: "Pañales Pampers Premium Care Talla M x 60", precio: 58.00, categoria: "bebe", imagen: "Pampers.webp" },
+    { id: 58, nombre: "Pañales Pampers Premium Care Talla M x 60", precio: 72.00, categoria: "bebe", imagen: "Pampers.webp" },
     { id: 59, nombre: "Esterilizador de Biberones para Microondas AVENT", precio: 285.00, categoria: "bebe", imagen: "Estirilizador.webp" },
     { id: 60, nombre: "Loción Hidratante Mustela 300ml", precio: 59.00, categoria: "bebe", imagen: "MustelaLocion.avif" },
 

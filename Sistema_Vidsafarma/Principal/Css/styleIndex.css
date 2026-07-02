@@ -718,6 +718,27 @@ body {
     background: var(--verde-hover); 
     transform: translateY(-2px);
  }
+ /* aqui va el estilo de la pseudoclasde de :hover del carrito*/
+
+.enlace-carrito:hover {
+    color: var(--verde-esmeralda);
+} /* Aui agreo el estilo del contador del carrito*/
+ .contador-carrito { 
+    position: absolute; 
+    top: -5px; 
+    right: -10px; 
+    background: var(--verde-esmeralda); 
+    color: var(--blanco); 
+    font-size: 15px; 
+    font-weight: bold; 
+    border-radius: 8px; 
+    width: 18px; 
+    height: 18px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align:center;
+}
 
 /*  ANIMACIONES
 */
