@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../Css/styleIndex.css">
     <link rel="stylesheet" href="../Css/carrito.css">
     <link rel="stylesheet" href="../Css/modalBusqueda.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -226,5 +228,85 @@
     <script src="../DataProductosContenedor/RenderProductos.js" defer></script>
     <script src="../JavaScript/BarraBusqueda.js" defer></script>
     <script src="../JavaScript/Index.js" defer></script>
+
+
+    <div class="support-container">
+
+<div class="support-box" id="supportBox">
+
+<div class="support-header">
+
+<span>Servicio al Cliente</span>
+
+<button id="closeBtn">&times;</button>
+
+</div>
+
+<a href="tel:+51987654321" class="support-item">
+
+<i class="fa-solid fa-phone"></i>
+
+<div>
+
+<strong>Llamar</strong>
+
+<br>
+
++51 987654321
+
+</div>
+
+</a>
+
+<a href="https://wa.me/51987654321?text=Hola,%20quiero%20información"
+
+target="_blank"
+
+class="support-item">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<div>
+
+<strong>WhatsApp</strong>
+
+<br>
+
+Atención inmediata
+
+</div>
+
+</a>
+
+</div>
+
+<button class="chat-btn" id="chatBtn">
+
+<i class="fa-solid fa-headset"></i>
+
+</button>
+
+</div>
+<script>
+
+const chatBtn=document.getElementById("chatBtn");
+
+const supportBox=document.getElementById("supportBox");
+
+const closeBtn=document.getElementById("closeBtn");
+
+chatBtn.onclick=function(){
+
+supportBox.style.display="block";
+
+}
+
+closeBtn.onclick=function(){
+
+supportBox.style.display="none";
+
+}
+
+</script>
 </body>
 </html>

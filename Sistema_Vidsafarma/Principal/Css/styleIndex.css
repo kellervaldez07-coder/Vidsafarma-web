@@ -825,4 +825,77 @@ body.dark-mode .enlace-carrito:hover { color: var(--Verde-vitalidad); }
 
 @media (min-width: 769px) {
     .imagen-farmacia { border-radius: 20px; max-width: 800px; }
+} .support-container{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+}
+
+.chat-btn{
+width:65px;
+height:65px;
+background:#28c76f;
+border:none;
+border-radius:50%;
+color:white;
+font-size:28px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.support-box{
+display:none;
+position:absolute;
+bottom:80px;
+right:0;
+width:300px;
+background:white;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+overflow:hidden;
+}
+
+.support-header{
+background:#233E92;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-weight:bold;
+}
+
+.support-header button{
+background:none;
+border:none;
+color:white;
+font-size:22px;
+cursor:pointer;
+}
+
+.support-item{
+display:flex;
+align-items:center;
+gap:15px;
+padding:18px;
+text-decoration:none;
+color:#333;
+border-top:1px solid #eee;
+}
+
+.support-item:hover{
+background:#f5f5f5;
+}
+
+.support-item i{
+font-size:30px;
+}
+
+.fa-phone{
+color:#233E92;
+}
+
+.fa-whatsapp{
+color:#25D366;
 }
