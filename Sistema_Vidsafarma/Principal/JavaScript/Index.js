@@ -51,6 +51,19 @@ const initDarkMode = () => {
         }
     });
 };
+const chatBtn = document.getElementById("chatBtn");
+const supportBox = document.getElementById("supportBox");
+const closeBtn = document.getElementById("closeBtn");
+
+if (chatBtn && supportBox && closeBtn) {
+    chatBtn.addEventListener("click", () => {
+        supportBox.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", () => {
+        supportBox.style.display = "none";
+    });
+}
 
 
 
