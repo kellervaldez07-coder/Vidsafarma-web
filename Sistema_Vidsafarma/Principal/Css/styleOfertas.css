@@ -1016,6 +1016,7 @@ body.dark-mode .tarjeta-promo {
 
 body.dark-mode .caja-imagen-promo {
     background-color: var(--blanco);
+    
 }
 
 body.dark-mode .caja-temporizador {
@@ -1063,4 +1064,451 @@ body.dark-mode .enlace-carrito {
 
 body.dark-mode .enlace-carrito:hover { 
     color: var(--Verde-vitalidad); 
+}
+/* 
+    VARIABLES DE ENTORNO (PALETA DE COLORES DE VIDSAFARMA)
+    */
+:root {
+    /* Identidad Corporativa y Colores Primarios */
+    --azul-oscuro: #1b3280;
+    --verde-esmeralda: #19b782;
+    --azul-footer: #223b97;
+    --amarillo-ofertas: #ffff00;
+    --naranja: #f97316;
+    --blanco: #ffffff;
+    
+    /* Estados de Interacción  */
+    --verde-hover: #149669;
+    --contraste-hacer-hover: #121212;
+    
+    /* Colores Neutros y de Superficie  */
+    --fondo-gris-claro: #f8fafc;
+    --borde-gris: #e5e8ec;
+    --texto-gris: #64748b;
+    --texto-gris-claro: #94a3b8;
+    
+    /* Translucidez y Sombras */
+    --linea-separadora: rgba(255, 255, 255, 0.15);
+    --texto-blanco-suave: rgba(255, 255, 255, 0.85);
+    --color-sombra-barra: rgba(25, 183, 130, 0.15);
+    --box-shadow-busqueda: rgba(0, 196, 154, 0.2);
+    
+    /* Variaciones Temáticas */
+    --Verde-vitalidad: #00C49A;
+}
+
+/* 
+    CONTENEDOR GLOBAL Y ANIMACIÓN DEL CARRUSEL INFINITO
+    */
+.slider-infinito {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Oculta los elementos que salen del viewport */
+  display: flex;
+  background-color: var(--fondo-gris-claro);
+  padding: 5px 0 30px 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #fff 7%, #fff 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #ffffff 7%, #fff 93%, transparent 100%);
+}
+.slider-infinito::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 60%;
+  background: radial-gradient(ellipse at center, rgba(25, 183, 130, 0.15) 0%, transparent 60%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulsoAura 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulsoAura {
+  0% { opacity: 0.4; transform: translate(-50%, -50%) scale(0.95); }
+  100% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.slider-track {
+  display: flex;
+  gap: 40px; /* Espaciado uniforme entre banners comerciales */
+  padding-right: 40px; /* Mantiene la consistencia del gap al reiniciar el bucle */
+  animation: desplazamientoInfinito 35s linear infinite;
+  /* Crea el punto de fuga 3D */
+  transform-style: preserve-3d; /* Movimiento continuo y sutil */
+}
+
+/* Pausa la animación del carrusel al interactuar con el mouse */
+.slider-infinito:hover .slider-track {
+  animation-play-state: paused;
+}
+
+/* Desplazamiento lineal exacto para el efecto infinito */
+@keyframes desplazamientoInfinito {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* 
+    ARQUITECTURA DEL BANNER 
+   */
+.banner-farmacia {
+  width: 1050px; /* Proporción panorámica optimizada para web */
+  height: 310px;
+  background: var(--blanco);
+  border-radius: 28px; /* Bordes suaves estilo soft UI */
+  /* Sombras multicapa para profundidad de interfaz sin saturar el diseño */
+  box-shadow: 0 25px 50px -12px rgba(27, 50, 128, 0.08), 
+              0 0 0 1px var(--borde-gris);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita desbordamientos de color fuera de las esquinas */
+  flex-shrink: 0; /* Impide que Flexbox deforme el ancho del banner */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1.1),
+              filter 0.5s ease,
+              box-shadow 0.6s ease,
+              border-color 0.5s ease;
+  will-change: transform, filter;
+}
+.slider-infinito:hover .banner-farmacia {
+  filter: blur(3px) grayscale(30%) brightness(0.9);
+  transform: scale(0.95) translateZ(-50px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.slider-infinito .banner-farmacia:hover {
+  filter: blur(0px) grayscale(0%) brightness(1.05);
+  transform: scale(1.03) translateZ(40px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: -20px 30px 60px rgba(27, 50, 128, 0.15), 
+              0 0 0 2px var(--verde-esmeralda); /* Borde neón que se enciende */
+  z-index: 100; /* Asegura que se dibuje por encima de los demás */
+}
+
+/* Microinteracción de elevación al posicionar el cursor */
+.banner-farmacia:hover {
+  transform: translateY(-6px);
+}
+
+/* Contenedor del cuerpo principal que aísla las categorías y personajes del footer */
+.banner-body {
+  display: flex;
+  height: 250px;
+  position: relative;
+  background: var(--blanco);
+  overflow: hidden; /* Corta los excesos verticales de la elipse central */
+}
+
+/* 
+    BLOQUES LATERALES Y ELIPSE CENTRAL (ESTRUCTUACIÓN ANTI-RECORTE)
+    */
+
+/* Bloques de Categorías de la Izquierda (Layout del 50% del contenedor) */
+.bloque-categoria.facial,
+.bloque-categoria.vitaminas {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 45px;
+  padding-right: 20px; /* Muro invisible para alejar el texto de la curva del centro */
+  position: relative;
+  z-index: 1;
+}
+
+/* Bloques de Categorías de la Derecha */
+.bloque-categoria.corporal,
+.bloque-categoria.suplementos {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 250px; /* Evita que la elipse amarilla solape el inicio de los textos */
+  padding-right: 45px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Bloque Central de Ofertas (Anclaje absoluto e imperturbable) */
+.bloque-central-promo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 360px; /* Ancho fijo para blindar la legibilidad de los textos comerciales */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Generación de la Onda Curva Amarilla mediante Pseudo-elemento */
+.bloque-central-promo::before {
+  content: '';
+  position: absolute;
+  top: -35px;    /* Sobresale verticalmente para simular un arco más plano */
+  bottom: -35px;
+  left: -15px;   /* Expansión horizontal controlada */
+  right: -15px;
+  background: linear-gradient(135deg, var(--amarillo-ofertas) 0%, #ffcc00 100%);
+  border-radius: 50%; /* Transforma el bloque en una elipse perfecta */
+  z-index: -1; /* Posiciona el color detrás del texto promocional */
+  box-shadow: -15px 0 30px -10px rgba(0,0,0,0.12), 
+               15px 0 30px -10px rgba(0,0,0,0.12);
+}
+
+/* 
+    TIPOGRAFÍA, BOTONES Y LLAMADAS A LA ACCIÓN (CTA)
+    */
+.categoria-tag {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--texto-gris);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.precio-desde {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--texto-gris);
+  margin-bottom: 20px;
+}
+
+.precio-desde .moneda,
+.precio-desde .monto {
+  color: var(--azul-oscuro);
+}
+
+.precio-desde .moneda {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+.precio-desde .monto {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.04em; 
+}
+
+
+
+/* Componentes de Texto del Bloque Central */
+.fecha-badge {
+  background-color: var(--verde-esmeralda);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.texto-gancho {
+  color: var(--azul-oscuro);
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.03em;
+}
+
+.texto-gancho .resaltado-verde {
+  color: var(--verde-esmeralda);
+  background: var(--blanco);
+  padding: 2px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.badge-precios-bajos {
+  background: var(--naranja);
+  color: var(--blanco);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 6px 18px;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px -4px rgba(249, 115, 22, 0.3);
+}
+
+
+
+/* 
+    VITRINA DE PRODUCTOS (STAND SECUNDARIO)
+    */
+.vitrina-productos {
+  position: absolute;
+  right: 35px;
+  bottom: 15px;
+  width: 140px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.producto-placeholder {
+  width: 50px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: absolute;
+  bottom: 0;
+}
+
+.banner-footer-cupon {
+  height: 60px;
+  background-color: var(--blanco);
+  border-top: 1px solid var(--borde-gris);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  font-size: 0.9rem;
+  color: var(--texto-gris);
+  z-index: 20; /* Garantiza la superposición sobre elementos arqueados */
+}
+
+.cupon-monto {
+  color: var(--verde-esmeralda);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 20px;
+}
+
+.cupon-instruccion {
+  margin-right: auto;
+}
+
+/* Contenedor del Token del código de descuento */
+.codigo-cupon {
+  background-color: rgba(25, 183, 130, 0.1); 
+  color: var(--verde-hover);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--color-sombra-barra);
+}
+
+.cupon-condiciones {
+  font-size: 0.8rem;
+  color: var(--texto-gris-claro);
+}
+
+/* 
+ COMPORTAMIENTO Y POSICIÓN DE PERSONAJES FLOTANTES
+    */
+.personaje-flotante {
+  position: absolute;
+  bottom: -5px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: flotarPersonaje 4s ease-in-out infinite;
+}
+
+.pos-izq { left: 245px; }
+.pos-der { right: 245px; }
+
+.img-personaje {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.img-personaje::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  
+  border-color: #fff transparent;
+
+}
+.img-personaje {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.delay-anim {
+  animation-delay: 2s; /* Desincroniza el movimiento para mayor naturalidad */
+}
+
+/* Globo de texto flotante */
+.globo-dialogo {
+  position: absolute;
+  top: -35px;
+  left: -20px;
+  background: var(--blanco);
+  color: var(--azul-oscuro);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 8px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--borde-gris);
+  box-shadow: 0 10px 20px -5px rgba(27, 50, 128, 0.15);
+  line-height: 1.2;
+  white-space: nowrap;
+  animation: latidoGlobo 3s ease-in-out infinite;
+}
+
+.globo-dialogo::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: var(--blanco);
+  border-right: 1px solid var(--borde-gris);
+  border-bottom: 1px solid var(--borde-gris);
+}
+
+/* Animaciones mediante transformaciones eficientes procesadas por hardware (GPU) */
+@keyframes flotarPersonaje {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes latidoGlobo {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1.04) rotate(1deg); }
+}
+
+/* 
+   VARIACIONES TEMÁTICAS ASOCIADAS (TEMA BIENESTAR)
+   */
+.tema-bienestar .bloque-categoria.vitaminas {
+  background: linear-gradient(135deg, var(--Verde-vitalidad) 0%, var(--verde-esmeralda) 100%);
+}
+.tema-bienestar .bloque-categoria.vitaminas .categoria-tag,
+.tema-bienestar .bloque-categoria.vitaminas .precio-desde,
+.tema-bienestar .bloque-categoria.vitaminas .moneda,
+.tema-bienestar .bloque-categoria.vitaminas .monto {
+  color: var(--blanco);
+}
+
+.tema-bienestar .bloque-categoria.suplementos {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--azul-oscuro);
 }

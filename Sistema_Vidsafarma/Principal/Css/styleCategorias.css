@@ -208,7 +208,7 @@ body {
 .boton-buscar:focus-visible { 
     background-color: var(--azul-oscuro); 
     transform: scale(1.05); 
-    outline: none; 
+  
 }
 
 .boton-buscar:active { 
@@ -253,6 +253,7 @@ body {
     color: var(--campo-invalido); 
     font-size: 0.85rem; 
     font-weight: 600; 
+
     margin-top: 5px; 
     display: block; 
     width: 100%; 
@@ -612,6 +613,7 @@ body {
 .boton-agregar:hover { 
     background-color: var(--azul-oscuro); 
     color: var(--blanco); 
+    
 }
 
 .boton-agregar:active { 
@@ -1073,3 +1075,4 @@ body.dark-mode .enlace-carrito {
 body.dark-mode .enlace-carrito:hover { 
     color: var(--Verde-vitalidad); 
 }
+

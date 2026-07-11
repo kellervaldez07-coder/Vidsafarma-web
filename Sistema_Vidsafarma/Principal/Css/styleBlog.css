@@ -440,7 +440,7 @@ body {
 }
 
 .boton-leer-mas { 
-    color: var(--verde-esmeralda); 
+    color: var(--azul-footer); 
     text-decoration: none; 
     font-weight: 800; 
     font-size: 16px; 
@@ -453,6 +453,7 @@ body {
 .boton-leer-mas:hover { 
     color: var(--verde-hover); 
 }
+
 
 /* Cuadrícula de Posts */
 .titulo-seccion-recientes { 
