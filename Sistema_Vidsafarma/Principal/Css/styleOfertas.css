@@ -1345,39 +1345,7 @@ body.dark-mode .enlace-carrito:hover {
 
 
 
-/* 
-    VITRINA DE PRODUCTOS (STAND SECUNDARIO)
-    */
-.vitrina-productos {
-  position: absolute;
-  right: 35px;
-  bottom: 15px;
-  width: 140px;
-  height: 120px;
-  pointer-events: none;
-}
 
-.producto-placeholder {
-  width: 50px;
-  height: 100px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  position: absolute;
-  bottom: 0;
-}
-
-.banner-footer-cupon {
-  height: 60px;
-  background-color: var(--blanco);
-  border-top: 1px solid var(--borde-gris);
-  display: flex;
-  align-items: center;
-  padding: 0 40px;
-  font-size: 0.9rem;
-  color: var(--texto-gris);
-  z-index: 20; /* Garantiza la superposición sobre elementos arqueados */
-}
 
 .cupon-monto {
   color: var(--verde-esmeralda);
