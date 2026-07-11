@@ -1065,37 +1065,8 @@ body.dark-mode .enlace-carrito {
 body.dark-mode .enlace-carrito:hover { 
     color: var(--Verde-vitalidad); 
 }
-/* 
-    VARIABLES DE ENTORNO (PALETA DE COLORES DE VIDSAFARMA)
-    */
-:root {
-    /* Identidad Corporativa y Colores Primarios */
-    --azul-oscuro: #1b3280;
-    --verde-esmeralda: #19b782;
-    --azul-footer: #223b97;
-    --amarillo-ofertas: #ffff00;
-    --naranja: #f97316;
-    --blanco: #ffffff;
-    
-    /* Estados de Interacción  */
-    --verde-hover: #149669;
-    --contraste-hacer-hover: #121212;
-    
-    /* Colores Neutros y de Superficie  */
-    --fondo-gris-claro: #f8fafc;
-    --borde-gris: #e5e8ec;
-    --texto-gris: #64748b;
-    --texto-gris-claro: #94a3b8;
-    
-    /* Translucidez y Sombras */
-    --linea-separadora: rgba(255, 255, 255, 0.15);
-    --texto-blanco-suave: rgba(255, 255, 255, 0.85);
-    --color-sombra-barra: rgba(25, 183, 130, 0.15);
-    --box-shadow-busqueda: rgba(0, 196, 154, 0.2);
-    
-    /* Variaciones Temáticas */
-    --Verde-vitalidad: #00C49A;
-}
+
+
 
 /* 
     CONTENEDOR GLOBAL Y ANIMACIÓN DEL CARRUSEL INFINITO
@@ -1106,10 +1077,9 @@ body.dark-mode .enlace-carrito:hover {
   overflow: hidden; /* Oculta los elementos que salen del viewport */
   display: flex;
   background-color: var(--fondo-gris-claro);
-  padding: 5px 0 30px 0;
+  padding: 0px 0 30px 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #fff 7%, #fff 93%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, #ffffff 7%, #fff 93%, transparent 100%);
+  
 }
 .slider-infinito::before {
   content: '';
@@ -1136,7 +1106,7 @@ body.dark-mode .enlace-carrito:hover {
   gap: 40px; /* Espaciado uniforme entre banners comerciales */
   padding-right: 40px; /* Mantiene la consistencia del gap al reiniciar el bucle */
   animation: desplazamientoInfinito 35s linear infinite;
-  /* Crea el punto de fuga 3D */
+  
   transform-style: preserve-3d; /* Movimiento continuo y sutil */
 }
 
@@ -1150,6 +1120,17 @@ body.dark-mode .enlace-carrito:hover {
   0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
+.cupon-condiciones{
+    padding-left: 40px;
+}
+.cupon-instruccion{
+    padding-left: 40px;
+}
+.cupon-monto {
+    padding-left: 40px;
+}
+
+
 
 /* 
     ARQUITECTURA DEL BANNER 
@@ -1204,7 +1185,7 @@ body.dark-mode .enlace-carrito:hover {
     BLOQUES LATERALES Y ELIPSE CENTRAL (ESTRUCTUACIÓN ANTI-RECORTE)
     */
 
-/* Bloques de Categorías de la Izquierda (Layout del 50% del contenedor) */
+
 .bloque-categoria.facial,
 .bloque-categoria.vitaminas {
   width: 50%;
@@ -1354,6 +1335,7 @@ body.dark-mode .enlace-carrito:hover {
   align-items: center;
   gap: 8px;
   margin-right: 20px;
+  
 }
 
 .cupon-instruccion {
@@ -1364,7 +1346,7 @@ body.dark-mode .enlace-carrito:hover {
 .codigo-cupon {
   background-color: rgba(25, 183, 130, 0.1); 
   color: var(--verde-hover);
-  padding: 4px 12px;
+  padding: 4px 15px 2px 0px;
   border-radius: 6px;
   font-weight: 800;
   letter-spacing: 0.02em;
