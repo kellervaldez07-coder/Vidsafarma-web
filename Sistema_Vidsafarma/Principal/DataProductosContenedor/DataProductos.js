@@ -24,7 +24,7 @@ const data = [
     // -------------- CUIDADO PERSONAL  -------------
     { id: 21, nombre: "Shampoo Anticaspa LIFE 600ml FOR-MEN", precio: 15.00, categoria: "cuidado", imagen: "ShampoLife.jpg" },
     { id: 22, nombre: "Jabón Líquido Antibacterial 360ml-Manzana", precio: 17.80, categoria: "cuidado", imagen: "JabonLiquido.webp" },
-    { id: 23, nombre: "Crema Hidratante POND'S 50gr", precio: 31.00, categoria: "cuidado", imagen: "Ponds.jpg" },
+    { id: 23, nombre: "Crema Hidratante PONDS 50gr", precio: 31.00, categoria: "cuidado", imagen: "Ponds.jpg" },
     { id: 24, nombre: "Desodorante Spray NIVEA 150ml-Pearl Beauty", precio: 12.00, categoria: "cuidado", imagen: "Desodorante.webp" },
     { id: 25, nombre: "Pasta Dental Oral-B 75ml", precio: 17.50, categoria: "cuidado", imagen: "Oral-B.webp" },
     { id: 26, nombre: "Enjuague Bucal Colgate PLAX Soft Mint 500ml", precio: 14.50, categoria: "cuidado", imagen: "Colgate.webp" },
