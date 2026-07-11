@@ -2,6 +2,41 @@
    ESTILOS DEL CARRITO - VIDSAFARMA
    ======================================== */
 
+/* --- Botón del carrito en el header --- */
+.boton-carrito {
+    background: var(--azul-footer, #223b97);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.boton-carrito:hover {
+    background: var(--azul-oscuro, #1b3280);
+}
+
+.boton-carrito .contador {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    display: none;
+    min-width: 20px;
+    justify-content: center;
+}
+
 /* --- Panel lateral del carrito --- */
 .panel-carrito {
     position: fixed;
@@ -212,23 +247,49 @@
     flex-shrink: 0;
 }
 
-.panel-carrito-footer .total {
+/* --- Subtotal, IGV y Total --- */
+.subtotal,
+.igv,
+.total {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    padding: 8px 0;
+    font-size: 16px;
 }
 
-.panel-carrito-footer .total span:first-child {
-    font-size: 18px;
-    font-weight: 700;
+.subtotal span:first-child,
+.igv span:first-child,
+.total span:first-child {
+    font-weight: 600;
     color: #0f172a;
 }
 
-.panel-carrito-footer .total #total-carrito {
-    font-size: 22px;
+.subtotal span:last-child,
+.igv span:last-child,
+.total span:last-child {
+    font-weight: 700;
+}
+
+.igv {
+    border-bottom: 1px dashed #e5e8ec;
+    padding-bottom: 12px;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.total {
+    font-size: 20px;
     font-weight: 800;
+    color: var(--azul-oscuro, #1b3280);
+    padding-top: 8px;
+    border-top: 2px solid #e5e8ec;
+}
+
+.total span:last-child {
     color: var(--verde-esmeralda, #19b782);
+    font-size: 22px;
 }
 
 .panel-carrito-footer .botones-accion {
@@ -323,4 +384,138 @@
     .panel-carrito-footer .botones-accion {
         flex-direction: column;
     }
+}
+
+/* ========================================
+   MODO OSCURO - CARRITO
+   ======================================== */
+
+/* Subtotal, IGV y Total en modo oscuro */
+body.dark-mode .subtotal span,
+body.dark-mode .igv span,
+body.dark-mode .total span {
+    color: #ffffff !important;
+}
+
+/* Subtotal (primera columna) */
+body.dark-mode .subtotal span:first-child {
+    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+}
+
+body.dark-mode .subtotal span:last-child {
+    color: #ffffff !important;  /* Blanco para el número */
+}
+
+/* IGV */
+body.dark-mode .igv span:first-child {
+    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+}
+
+body.dark-mode .igv span:last-child {
+    color: #ffffff !important;  /* Blanco para el número */
+}
+
+/* Total */
+body.dark-mode .total span:first-child {
+    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+}
+
+body.dark-mode .total span:last-child {
+    color: #00C49A !important;  /* Verde vitalidad para el total */
+}
+
+/* Contador del carrito (burbuja) */
+body.dark-mode .contador-carrito {
+    background: var(--verde-esmeralda, #10b782) !important;
+    color: #ffffff !important;
+}
+
+/* Contador en modo oscuro (por si usas otro selector) */
+body.dark-mode #contadorCarrito {
+    color: #ffffff !important;
+}
+
+/* Panel del carrito en modo oscuro - fondo */
+body.dark-mode .panel-carrito {
+    background-color: #1a1a2e !important;
+}
+
+/* Cabecera del carrito en modo oscuro */
+body.dark-mode .panel-carrito-header {
+    background-color: #16213e !important;
+}
+
+/* Pie del carrito en modo oscuro */
+body.dark-mode .panel-carrito-footer {
+    background-color: #1a1a2e !important;
+    border-top: 1px solid #2d2d44 !important;
+}
+
+/* Productos en el carrito - modo oscuro */
+body.dark-mode .carrito-item {
+    background-color: #1e1e32 !important;
+    border: 1px solid #2d2d44 !important;
+}
+
+body.dark-mode .carrito-item-info h4 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .carrito-item-precio {
+    color: #00C49A !important;
+}
+
+body.dark-mode .carrito-item-cantidad span {
+    color: #ffffff !important;
+}
+
+body.dark-mode .carrito-item-cantidad button {
+    background: #2d2d44 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .carrito-item-cantidad button:hover {
+    background: #3d3d5c !important;
+}
+
+/* Carrito vacío - modo oscuro */
+body.dark-mode .carrito-vacio p {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .carrito-vacio span {
+    color: #64748b !important;
+}
+
+body.dark-mode .carrito-vacio i {
+    color: #4a4a6a !important;
+}
+
+/* Botones del carrito - modo oscuro */
+body.dark-mode .btn-vaciar {
+    background: #2d1f1f !important;
+    color: #ef4444 !important;
+}
+
+body.dark-mode .btn-vaciar:hover {
+    background: #3d2a2a !important;
+}
+
+body.dark-mode .btn-finalizar {
+    background: #00C49A !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .btn-finalizar:hover {
+    background: #00a87e !important;
+}
+
+/* Línea separadora del IGV */
+body.dark-mode .igv {
+    border-bottom-color: #2d2d44 !important;
+}
+
+/* Total en modo oscuro */
+body.dark-mode .total {
+    border-top-color: #2d2d44 !important;
 }
