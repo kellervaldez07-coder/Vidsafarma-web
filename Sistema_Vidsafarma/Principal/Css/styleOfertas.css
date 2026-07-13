@@ -1081,6 +1081,7 @@ body.dark-mode .enlace-carrito:hover {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   
 }
+
 .slider-infinito::before {
   content: '';
   position: absolute;
@@ -1106,7 +1107,6 @@ body.dark-mode .enlace-carrito:hover {
   gap: 40px; /* Espaciado uniforme entre banners comerciales */
   padding-right: 40px; /* Mantiene la consistencia del gap al reiniciar el bucle */
   animation: desplazamientoInfinito 35s linear infinite;
-  
   transform-style: preserve-3d; /* Movimiento continuo y sutil */
 }
 
@@ -1140,7 +1140,6 @@ body.dark-mode .enlace-carrito:hover {
   height: 310px;
   background: var(--blanco);
   border-radius: 28px; /* Bordes suaves estilo soft UI */
-  /* Sombras multicapa para profundidad de interfaz sin saturar el diseño */
   box-shadow: 0 25px 50px -12px rgba(27, 50, 128, 0.08), 
               0 0 0 1px var(--borde-gris);
   display: flex;

@@ -1,10 +1,22 @@
-/* ========================================
-   ESTILOS DEL CARRITO - VIDSAFARMA
-   ======================================== */
+ .root {
+    --azul-oscuro: #1b3280;
+    --azul-footer: #223b97;
+    --verde-esmeralda: #10b782;
+    --verde-hover: #149669;
+    --blanco: #ffffff;
+    --texto-oscuro: #0f172a;
+    --texto-gris: #64748b;
+    --texto-gris-claro: #94a3b8;
+    --fondo-gris-claro: #f8fafc;
+    --borde-gris: #e2e8f0;
+    --campo-invalido: #e74c3c;
+    --amarillo-ofertas: #ffff00;
+    --naranja: #f97316;
+ }
 
 /* --- Botón del carrito en el header --- */
 .boton-carrito {
-    background: var(--azul-footer, #223b97);
+    background: var(--azul-footer);
     color: white;
     border: none;
     padding: 10px 18px;
@@ -19,11 +31,11 @@
 }
 
 .boton-carrito:hover {
-    background: var(--azul-oscuro, #1b3280);
+    background: var(--azul-oscuro);
 }
 
 .boton-carrito .contador {
-    background: #e74c3c;
+    background: #f31800;
     color: white;
     border-radius: 50%;
     padding: 2px 8px;
@@ -236,7 +248,7 @@
 }
 
 .carrito-vacio span {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* --- Pie del carrito (total + botones) --- */
@@ -314,20 +326,21 @@
 
 .btn-vaciar {
     background: #fee2e2;
-    color: #e74c3c;
+    color: #ef6758;
 }
 
 .btn-vaciar:hover {
-    background: #fecaca;
+    background: #e34d4d;
+    color:#ffff;
 }
 
 .btn-finalizar {
-    background: var(--verde-esmeralda, #19b782);
-    color: white;
+    background: var(--verde-esmeralda, #03e897);
+    color: #ffff;
 }
 
 .btn-finalizar:hover {
-    background: var(--verde-hover, #149669);
+    background: var(--verde-hover, #03e897);
 }
 
 /* --- Notificación flotante --- */
@@ -335,8 +348,8 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #1b3280;
-    color: white;
+    background: #1d29ad;
+    color: #ffff;
     padding: 14px 24px;
     border-radius: 10px;
     font-weight: 600;
@@ -386,136 +399,149 @@
     }
 }
 
-/* ========================================
-   MODO OSCURO - CARRITO
-   ======================================== */
+/* 
+    VARIABLES DE COLOR - MODO OSCURO
+   */
+body.dark-mode {
+    /* Fondos */
+    --carrito-bg-panel: #0f172a;
+    --carrito-bg-elevado: #1e293b;
+    --carrito-bg-hover: #334155;
 
-/* Subtotal, IGV y Total en modo oscuro */
-body.dark-mode .subtotal span,
-body.dark-mode .igv span,
-body.dark-mode .total span {
-    color: #ffffff !important;
+    /* Bordes y Separadores */
+    --carrito-border: #334155;
+
+    /* Textos */
+    --carrito-text-primary: #f8fafc;
+    --carrito-text-secondary: #94a3b8;
+    --carrito-text-muted: #475569;
+
+    /* Acento (Tu verde vitalidad) */
+    --carrito-acento: #00C49A;
+    --carrito-acento-hover: #00a87e;
+    --carrito-text-on-acento: #0f172a;
+    --carrito-boton-normal:#075343; /* Texto oscuro para contraste en el botón verde */
+
+    /* Acciones Destructivas (Botón Vaciar) */
+    --carrito-danger-bg: #691111;
+    --carrito-danger-text: #f87171;
+    --carrito-danger-border: #7f1d1d;
+    --carrito-danger-hover: #981919;
 }
 
-/* Subtotal (primera columna) */
-body.dark-mode .subtotal span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
-}
+/* 
+    ESTILOS DEL MODAL CARRITO
+   */
 
-body.dark-mode .subtotal span:last-child {
-    color: #ffffff !important;  /* Blanco para el número */
-}
-
-/* IGV */
-body.dark-mode .igv span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
-}
-
-body.dark-mode .igv span:last-child {
-    color: #ffffff !important;  /* Blanco para el número */
-}
-
-/* Total */
-body.dark-mode .total span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
-}
-
-body.dark-mode .total span:last-child {
-    color: #00C49A !important;  /* Verde vitalidad para el total */
-}
-
-/* Contador del carrito (burbuja) */
-body.dark-mode .contador-carrito {
-    background: var(--verde-esmeralda, #10b782) !important;
-    color: #ffffff !important;
-}
-
-/* Contador en modo oscuro (por si usas otro selector) */
-body.dark-mode #contadorCarrito {
-    color: #ffffff !important;
-}
-
-/* Panel del carrito en modo oscuro - fondo */
+/* Fondos y Contenedores Principales */
 body.dark-mode .panel-carrito {
-    background-color: #1a1a2e !important;
+    background-color: var(--carrito-bg-panel);
 }
 
-/* Cabecera del carrito en modo oscuro */
 body.dark-mode .panel-carrito-header {
-    background-color: #16213e !important;
+    background-color: var(--carrito-bg-elevado);
+    border-bottom: 1px solid var(--carrito-border);
 }
 
-/* Pie del carrito en modo oscuro */
 body.dark-mode .panel-carrito-footer {
-    background-color: #1a1a2e !important;
-    border-top: 1px solid #2d2d44 !important;
+    background-color: var(--carrito-bg-elevado);
+    border-top: 1px solid var(--carrito-border);
 }
 
-/* Productos en el carrito - modo oscuro */
+/* Tarjetas de Productos */
 body.dark-mode .carrito-item {
-    background-color: #1e1e32 !important;
-    border: 1px solid #2d2d44 !important;
+    background-color: var(--carrito-bg-elevado);
+    border: 1px solid var(--carrito-border);
 }
 
 body.dark-mode .carrito-item-info h4 {
-    color: #ffffff !important;
+    color: var(--carrito-text-primary);
 }
 
 body.dark-mode .carrito-item-precio {
-    color: #00C49A !important;
+    color: var(--carrito-acento);
 }
 
+/* Controles de Cantidad */
 body.dark-mode .carrito-item-cantidad span {
-    color: #ffffff !important;
+    color: var(--carrito-text-primary);
 }
 
 body.dark-mode .carrito-item-cantidad button {
-    background: #2d2d44 !important;
-    color: #ffffff !important;
+    background: var(--carrito-bg-hover);
+    color: var(--carrito-text-primary);
+    border: none;
 }
 
 body.dark-mode .carrito-item-cantidad button:hover {
-    background: #3d3d5c !important;
+    background: var(--carrito-text-muted);
+}
+body .dark-mode .carrito-item-eliminar {
+    background-color: red;
 }
 
-/* Carrito vacío - modo oscuro */
-body.dark-mode .carrito-vacio p {
-    color: #94a3b8 !important;
+/* Resumen de Precios */
+body.dark-mode .subtotal span,
+body.dark-mode .igv span,
+body.dark-mode .total span {
+    color: var(--carrito-text-primary);
 }
 
-body.dark-mode .carrito-vacio span {
-    color: #64748b !important;
+body.dark-mode .subtotal span:first-child,
+body.dark-mode .igv span:first-child,
+body.dark-mode .total span:first-child {
+    color: var(--carrito-text-secondary);
 }
 
-body.dark-mode .carrito-vacio i {
-    color: #4a4a6a !important;
+body.dark-mode .total span:last-child {
+    color: var(--carrito-acento);
+    font-weight: bold;
 }
 
-/* Botones del carrito - modo oscuro */
+/* Separadores de Precio */
+body.dark-mode .igv {
+    border-bottom-color: var(--carrito-border);
+}
+
+body.dark-mode .total {
+    border-top-color: var(--carrito-border);
+}
+
+/* Botones de Acción */
 body.dark-mode .btn-vaciar {
-    background: #2d1f1f !important;
-    color: #ef4444 !important;
+    background: var(--carrito-danger-bg);
+    color: var(--blanco);
+    
 }
 
 body.dark-mode .btn-vaciar:hover {
-    background: #3d2a2a !important;
+    background: var(--carrito-danger-hover);
+    color:var(--blanco);
 }
 
 body.dark-mode .btn-finalizar {
-    background: #00C49A !important;
-    color: #ffffff !important;
+    background: var(--carrito-boton-normal);
+    color: var(--blanco);
+    font-weight: bold;
+    
 }
 
 body.dark-mode .btn-finalizar:hover {
-    background: #00a87e !important;
+    background: var(--carrito-acento-hover);
 }
 
-/* Línea separadora del IGV */
-body.dark-mode .igv {
-    border-bottom-color: #2d2d44 !important;
+/* Estados Vacíos y Contadores */
+body.dark-mode .carrito-vacio p {
+    color: var(--carrito-text-secondary);
 }
 
-/* Total en modo oscuro */
-body.dark-mode .total {
-    border-top-color: #2d2d44 !important;
+body.dark-mode .carrito-vacio span,
+body.dark-mode .carrito-vacio i {
+    color: var( --carrito-danger-text);
+}
+
+body.dark-mode .contador-carrito,
+body.dark-mode #contadorCarrito {
+    background: var(--carrito-acento);
+    color: var(--carrito-text-on-acento);
 }
