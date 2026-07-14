@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-EJKBXCW5HQ');
 </script>
     <meta charset="UTF-8">
@@ -47,7 +46,7 @@
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <div class="caja-carrito">
-                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito" onclick="toggleCarrito(); return false;">
+                    <a href="#" id="btnAbrirCarrito" class="enlace-carrito">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="contador-carrito" id="contadorCarrito">0</span>Ver Carrito
                     </a>
@@ -165,6 +164,7 @@
                         <li><i class="fa-regular fa-clock"></i> <span>Lun-Sab: 8:00 AM - 10:00 PM<br>Dom: 9:00 AM - 6:00 PM</span></li>
                     </ul>
                 </div>
+
             </div>
 
             <div class="pie-medio">
@@ -184,6 +184,7 @@
                         <img src="../../Footer/Imagenes_Footer/LibroReclamaciones.png" alt="Libro de Reclamaciones">
                     </a>
                 </div>
+
             </div>
 
             <div class="pie-inferior">
@@ -194,12 +195,13 @@
 
     <!-- CARRITO DE COMPRAS -->
    
-    <div class="overlay-carrito" id="overlay-carrito" onclick="toggleCarrito()"></div>
+
+    <div class="overlay-carrito" id="overlay-carrito"></div>
 
     <div class="panel-carrito" id="panel-carrito">
         <div class="panel-carrito-header">
             <h2>🛒 Mi Carrito</h2>
-            <button class="cerrar-carrito" onclick="toggleCarrito()">✕</button>
+            <button class="cerrar-carrito">✕</button>
         </div>
         <div class="panel-carrito-body" id="lista-carrito">
             <!-- Aquí se renderizan los productos con JavaScript -->
@@ -218,8 +220,8 @@
                 <span id="total-carrito">S/ 0.00</span>
             </div>
             <div class="botones-accion">
-                <button class="btn-vaciar" onclick="vaciarCarrito()">🗑️ Vaciar</button>
-                <button class="btn-finalizar" onclick="finalizarCompra()">✅ Finalizar Compra</button>
+                <button class="btn-vaciar">🗑️ Vaciar</button>
+                <button class="btn-finalizar">✅ Finalizar Compra</button>
             </div>
         </div>
     </div>

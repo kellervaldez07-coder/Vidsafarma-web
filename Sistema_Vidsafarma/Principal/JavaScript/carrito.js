@@ -5,7 +5,7 @@
 // 1. Estado del carrito
 let carrito = [];
 
-// 2. Agregar productos
+// 2. Agregar productos (función global para que pueda ser llamada desde otros archivos)
 function agregarAlCarrito(nombre, precio, imagen) {
     const existe = carrito.find(item => item.nombre === nombre);
     
@@ -25,14 +25,14 @@ function agregarAlCarrito(nombre, precio, imagen) {
     mostrarNotificacion(`✅ ${nombre} agregado al carrito`);
 }
 
-// 3. Eliminar producto
+// 3. Eliminar producto (función global)
 function eliminarDelCarrito(nombre) {
     carrito = carrito.filter(item => item.nombre !== nombre);
     guardarCarrito();
     actualizarVistaCarrito();
 }
 
-// 4. Cambiar cantidad
+// 4. Cambiar cantidad (función global)
 function cambiarCantidad(nombre, accion) {
     const item = carrito.find(item => item.nombre === nombre);
     if (item) {
@@ -122,12 +122,12 @@ function actualizarVistaCarrito() {
                     <h4>${item.nombre}</h4>
                     <p class="carrito-item-precio">S/ ${item.precio.toFixed(2)}</p>
                     <div class="carrito-item-cantidad">
-                        <button onclick="cambiarCantidad('${item.nombre}', 'disminuir')">−</button>
+                        <button class="btn-disminuir" data-nombre="${item.nombre}">−</button>
                         <span>${item.cantidad}</span>
-                        <button onclick="cambiarCantidad('${item.nombre}', 'aumentar')">+</button>
+                        <button class="btn-aumentar" data-nombre="${item.nombre}">+</button>
                     </div>
                 </div>
-                <button class="carrito-item-eliminar" onclick="eliminarDelCarrito('${item.nombre}')">
+                <button class="btn-eliminar-item" data-nombre="${item.nombre}">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
@@ -135,6 +135,25 @@ function actualizarVistaCarrito() {
     });
     
     contenedor.innerHTML = html;
+    
+    // Agregar event listeners a los botones del carrito
+    contenedor.querySelectorAll('.btn-aumentar').forEach(btn => {
+        btn.addEventListener('click', function() {
+            cambiarCantidad(this.dataset.nombre, 'aumentar');
+        });
+    });
+    
+    contenedor.querySelectorAll('.btn-disminuir').forEach(btn => {
+        btn.addEventListener('click', function() {
+            cambiarCantidad(this.dataset.nombre, 'disminuir');
+        });
+    });
+    
+    contenedor.querySelectorAll('.btn-eliminar-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            eliminarDelCarrito(this.dataset.nombre);
+        });
+    });
     
     const subtotal = calcularSubtotal();
     const igv = subtotal * 0.18;
@@ -174,7 +193,7 @@ function mostrarNotificacion(mensaje) {
     }
 }
 
-// 12. Abrir/cerrar carrito
+// 12. Abrir/cerrar carrito (función global para que pueda ser llamada desde otros archivos)
 function toggleCarrito() {
     const panel = document.getElementById('panel-carrito');
     if (panel) {
@@ -204,11 +223,61 @@ function finalizarCompra() {
           `Los productos han sido agregados a tu pedido.`);
 }
 
-// INICIALIZAR
+// ========================================
+// EVENT LISTENERS CON addEventListener
+// ========================================
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Cargar carrito
     cargarCarrito();
+    
+    // Asegurar que el panel del carrito esté cerrado al inicio
     const panel = document.getElementById('panel-carrito');
     if (panel) {
         panel.classList.remove('abierto');
+    }
+    
+    // ========================================
+    // 1. Botón para abrir/cerrar carrito
+    // ========================================
+    const btnAbrirCarrito = document.getElementById('btnAbrirCarrito');
+    if (btnAbrirCarrito) {
+        btnAbrirCarrito.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleCarrito();
+        });
+    }
+    
+    // ========================================
+    // 2. Botón para cerrar carrito
+    // ========================================
+    const btnCerrarCarrito = document.querySelector('.cerrar-carrito');
+    if (btnCerrarCarrito) {
+        btnCerrarCarrito.addEventListener('click', function() {
+            toggleCarrito();
+        });
+    }
+    
+    // ========================================
+    // 3. Overlay para cerrar carrito
+    // ========================================
+    const overlay = document.getElementById('overlay-carrito');
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            toggleCarrito();
+        });
+    }
+    
+    // ========================================
+    // 4. Botones de acciones del carrito
+    // ========================================
+    const btnVaciar = document.querySelector('.btn-vaciar');
+    if (btnVaciar) {
+        btnVaciar.addEventListener('click', vaciarCarrito);
+    }
+    
+    const btnFinalizar = document.querySelector('.btn-finalizar');
+    if (btnFinalizar) {
+        btnFinalizar.addEventListener('click', finalizarCompra);
     }
 });

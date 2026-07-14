@@ -52,7 +52,7 @@ function renderizarProductosVidsafarma(){
 
                  <p class="precio-rebajado">s/. ${prod.precio.toFixed(2)}</p>
 
-                 <button class="boton-agregar" onclick="agregarAlCarrito('${prod.nombre}', ${prod.precio}, '../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}')">Agregar</button>
+                 <button class="boton-agregar" data-nombre="${prod.nombre}" data-precio="${prod.precio}" data-imagen="../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}">Agregar</button>
 
                </div>  
 
@@ -92,4 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderizarProductosVidsafarma();
 
+});
+
+// ========================================
+// EVENT LISTENERS PARA BOTONES "AGREGAR"
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Delegación de eventos para los botones "Agregar"
+    document.addEventListener('click', function(e) {
+        const boton = e.target.closest('.boton-agregar');
+        if (boton) {
+            const nombre = boton.dataset.nombre;
+            const precio = parseFloat(boton.dataset.precio);
+            const imagen = boton.dataset.imagen;
+            
+            if (nombre && precio && imagen) {
+                agregarAlCarrito(nombre, precio, imagen);
+            }
+        }
+    });
 });
