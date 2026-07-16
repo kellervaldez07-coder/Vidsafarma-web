@@ -387,7 +387,7 @@
 }
 
 /* ========================================
-   MODO OSCURO - CARRITO
+   MODO OSCURO - CARRITO (TUS ESTILOS)
    ======================================== */
 
 /* Subtotal, IGV y Total en modo oscuro */
@@ -399,29 +399,29 @@ body.dark-mode .total span {
 
 /* Subtotal (primera columna) */
 body.dark-mode .subtotal span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+    color: #94a3b8 !important;
 }
 
 body.dark-mode .subtotal span:last-child {
-    color: #ffffff !important;  /* Blanco para el número */
+    color: #ffffff !important;
 }
 
 /* IGV */
 body.dark-mode .igv span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+    color: #94a3b8 !important;
 }
 
 body.dark-mode .igv span:last-child {
-    color: #ffffff !important;  /* Blanco para el número */
+    color: #ffffff !important;
 }
 
 /* Total */
 body.dark-mode .total span:first-child {
-    color: #94a3b8 !important;  /* Gris claro para la etiqueta */
+    color: #94a3b8 !important;
 }
 
 body.dark-mode .total span:last-child {
-    color: #00C49A !important;  /* Verde vitalidad para el total */
+    color: #00C49A !important;
 }
 
 /* Contador del carrito (burbuja) */
@@ -430,7 +430,6 @@ body.dark-mode .contador-carrito {
     color: #ffffff !important;
 }
 
-/* Contador en modo oscuro (por si usas otro selector) */
 body.dark-mode #contadorCarrito {
     color: #ffffff !important;
 }
@@ -518,4 +517,139 @@ body.dark-mode .igv {
 /* Total en modo oscuro */
 body.dark-mode .total {
     border-top-color: #2d2d44 !important;
+}
+
+/* ========================================
+   MODO OSCURO - CARRITO (ESTILOS DE COMPAÑERO)
+   ======================================== */
+
+body.dark-mode {
+    /* Fondos */
+    --carrito-bg-panel: #0f172a;
+    --carrito-bg-elevado: #1e293b;
+    --carrito-bg-hover: #334155;
+    /* Bordes y Separadores */
+    --carrito-border: #334155;
+    /* Textos */
+    --carrito-text-primary: #f8fafc;
+    --carrito-text-secondary: #94a3b8;
+    --carrito-text-muted: #475569;
+    /* Acento */
+    --carrito-acento: #00C49A;
+    --carrito-acento-hover: #00a87e;
+    --carrito-text-on-acento: #0f172a;
+    --carrito-boton-normal: #075343;
+    /* Acciones Destructivas */
+    --carrito-danger-bg: #691111;
+    --carrito-danger-text: #f87171;
+    --carrito-danger-border: #7f1d1d;
+    --carrito-danger-hover: #981919;
+}
+
+/* Fondos y Contenedores Principales */
+body.dark-mode .panel-carrito {
+    background-color: var(--carrito-bg-panel);
+}
+
+body.dark-mode .panel-carrito-header {
+    background-color: var(--carrito-bg-elevado);
+    border-bottom: 1px solid var(--carrito-border);
+}
+
+body.dark-mode .panel-carrito-footer {
+    background-color: var(--carrito-bg-elevado);
+    border-top: 1px solid var(--carrito-border);
+}
+
+/* Tarjetas de Productos */
+body.dark-mode .carrito-item {
+    background-color: var(--carrito-bg-elevado);
+    border: 1px solid var(--carrito-border);
+}
+
+body.dark-mode .carrito-item-info h4 {
+    color: var(--carrito-text-primary);
+}
+
+body.dark-mode .carrito-item-precio {
+    color: var(--carrito-acento);
+}
+
+/* Controles de Cantidad */
+body.dark-mode .carrito-item-cantidad span {
+    color: var(--carrito-text-primary);
+}
+
+body.dark-mode .carrito-item-cantidad button {
+    background: var(--carrito-bg-hover);
+    color: var(--carrito-text-primary);
+    border: none;
+}
+
+body.dark-mode .carrito-item-cantidad button:hover {
+    background: var(--carrito-text-muted);
+}
+
+/* Resumen de Precios */
+body.dark-mode .subtotal span,
+body.dark-mode .igv span,
+body.dark-mode .total span {
+    color: var(--carrito-text-primary);
+}
+
+body.dark-mode .subtotal span:first-child,
+body.dark-mode .igv span:first-child,
+body.dark-mode .total span:first-child {
+    color: var(--carrito-text-secondary);
+}
+
+body.dark-mode .total span:last-child {
+    color: var(--carrito-acento);
+    font-weight: bold;
+}
+
+/* Separadores de Precio */
+body.dark-mode .igv {
+    border-bottom-color: var(--carrito-border);
+}
+
+body.dark-mode .total {
+    border-top-color: var(--carrito-border);
+}
+
+/* Botones de Acción */
+body.dark-mode .btn-vaciar {
+    background: var(--carrito-danger-bg);
+    color: var(--blanco, #ffffff);
+}
+
+body.dark-mode .btn-vaciar:hover {
+    background: var(--carrito-danger-hover);
+    color: var(--blanco, #ffffff);
+}
+
+body.dark-mode .btn-finalizar {
+    background: var(--carrito-boton-normal);
+    color: var(--blanco, #ffffff);
+    font-weight: bold;
+}
+
+body.dark-mode .btn-finalizar:hover {
+    background: var(--carrito-acento-hover);
+}
+
+/* Estados Vacíos y Contadores */
+body.dark-mode .carrito-vacio p {
+    color: var(--carrito-text-secondary);
+}
+
+body.dark-mode .carrito-vacio span,
+body.dark-mode .carrito-vacio i {
+    color: var(--carrito-danger-text);
+}
+
+body.dark-mode .contador-carrito,
+body.dark-mode #contadorCarrito {
+    background: var(--carrito-acento);
+    color: var(--carrito-text-on-acento);
 }
