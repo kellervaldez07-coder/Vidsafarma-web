@@ -533,7 +533,7 @@ body {
 .icono-color-morado { 
     color: var(--cat-icono-morado); 
     font-size: 56px;
-    color: var(--cat-icono-rojo); 
+    color: var(--cat-icono-morado); 
     font-size: 56px;
     height:90px;
     border-radius: 50%;
