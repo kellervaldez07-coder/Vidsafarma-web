@@ -105,3 +105,29 @@ const initPriceFilter = () => {
         });
     });
 };
+
+// Creamos el efecto zoom a los productos en oferta
+
+const cajasPromo = document.querySelectorAll('.caja-imagen-promo');
+
+cajasPromo.forEach(caja =>{
+    const imagen = caja.querySelector('.imagen-promo');
+
+    // Escuchamos el movimiento del mouse
+    caja.addEventListener('mousemove',(e) => {
+        // Aqui calculamos las coordenadas del mouse relativas a la caja
+
+        const{ left, top, width, height } = caja.getBoundingClientRect();
+        const x = ((e.clientX-left) / width)*100;
+        const y = ((e.clientY-top) / height)*100;
+
+        //Se mueve el origen de la trasnformacion hacia el mouse
+
+        imagen.style.transformOrigin = `${x}% ${y}%`;
+    });
+
+    // cuando el mouse sale de la imagen vuelve a su normalidad
+    caja.addEventListener('mouseleave',() =>{
+        imagen.style.transformOrigin = 'center center';
+    });
+});

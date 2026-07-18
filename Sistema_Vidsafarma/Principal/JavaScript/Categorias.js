@@ -58,3 +58,37 @@ const initDarkMode = () => {
     });
 };
 
+
+document.addEventListener('mousemove', (e) => {
+    // Escuchamos si el mouse entra en el marco protector
+    const marco = e.target.closest('.marco-foto');
+    
+    if (marco) {
+        const imagen = marco.querySelector('.img-producto');
+        
+        if (imagen) {
+            // Calculamos coordenadas relativas
+            const { left, top, width, height } = marco.getBoundingClientRect(); 
+            const x = ((e.clientX - left) / width) * 100;
+            const y = ((e.clientY - top) / height) * 100;
+
+            // Movemos el ancla del zoom hacia el puntero
+            imagen.style.transformOrigin = `${x}% ${y}%`;
+        }
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    const marco = e.target.closest('.marco-foto');
+    
+    if (marco) {
+        // Aseguramos que el mouse realmente salió del marco
+        if (!marco.contains(e.relatedTarget)) {
+            const imagen = marco.querySelector('.img-producto');
+            if (imagen) {
+                // Devolvemos el origen al centro al salir
+                imagen.style.transformOrigin = 'center center';
+            }
+        }
+    }
+});

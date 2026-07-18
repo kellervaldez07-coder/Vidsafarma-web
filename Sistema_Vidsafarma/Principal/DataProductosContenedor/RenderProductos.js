@@ -46,7 +46,9 @@ function renderizarProductosVidsafarma(){
 
                <div class="item-prod-mini tarjeta-producto" id="producto-${prod.id}">
 
-                 <img src="../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}" alt="${prod.nombre}" class="img-prod-real img-producto">
+                 <div class="marco-foto">
+                     <img src="../DataProductosContenedor/Imagenes/${prod.categoria}/${prod.imagen}" alt="${prod.nombre}" class="img-prod-real img-producto">
+                 </div>
 
                  <h4 class="nombre-producto">${prod.nombre}</h4>
 
@@ -94,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ========================================
+
 // EVENT LISTENERS PARA BOTONES "AGREGAR"
-// ========================================
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Delegación de eventos para los botones "Agregar"
