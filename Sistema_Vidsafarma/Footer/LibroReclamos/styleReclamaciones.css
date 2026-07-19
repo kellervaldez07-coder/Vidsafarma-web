@@ -94,12 +94,12 @@ textarea {
 }
 
 .btn-enviar {
+
     background-color: var(--verde-esmeralda);
     color: var(--blanco);
     border: none;
     padding: 16px 30px;
     border-radius: 6px;
-    cursor: pointer;
     width: 100%;
     font-size: 16px;
     font-weight: bold;
@@ -109,6 +109,12 @@ textarea {
 
 .btn-enviar:hover {
     background-color:var(--verde-esmeralda);
+}
+.seccion_btn {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 .nota-explicativa {
@@ -126,4 +132,116 @@ textarea {
     margin-top: 50px;
     padding-top: 25px;
     color: #475569;
+}
+/* --- Monitores estándar y Laptops  --- */
+@media (min-width: 1024px) {
+    body {
+        padding: 40px 20px; 
+    }
+
+    .container {
+        max-width: 850px; 
+        padding: 50px 60px; 
+    }
+
+    h2 {
+        font-size: 18px; 
+        margin-top: 50px;
+    }
+
+    
+    .btn-enviar {
+        width: auto; 
+        min-width: 250px;
+        float: right; 
+        margin-top: 30px;
+    }
+
+    
+    .nota-legal {
+        clear: both;
+        margin-top: 80px;
+    }
+
+    
+    input[type="text"]:focus, 
+    textarea:focus {
+        outline: none;
+        border-color: var(--verde-esmeralda);
+        box-shadow: 0 0 0 3px rgba(25, 183, 130, 0.15);
+    }
+}
+
+ 
+
+
+
+/* --- TABLETS Y MÓVILES (Estándar: 768px) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; 
+    }
+
+    .container {
+        padding: 25px 20px; 
+    }
+
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    
+    h2 {
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    .boton-volver {
+        font-size: 1rem;
+    }
+
+    .btn-enviar {
+        margin-top: 30px;
+        padding: 14px 20px;
+    }
+}
+
+
+@media (max-width: 420px) {
+    body {
+        padding: 0; 
+        background-color: var(--blanco); 
+    }
+
+    .container {
+        padding: 20px 15px;
+        border: none; 
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .acciones-superiores {
+        margin-bottom: 15px;
+        padding-left: 0;
+    }
+
+    
+    .radio-group label, 
+    .checkbox-container {
+        padding: 8px 0; 
+        margin: 5px 0;
+    }
+
+    input[type="text"], 
+    textarea {
+        font-size: 16px; 
+        padding: 10px;
+    }
+
+    .nota-explicativa, 
+    .nota-legal {
+        font-size: 12px;
+    }
 }

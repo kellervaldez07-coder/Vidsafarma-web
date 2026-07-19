@@ -624,14 +624,15 @@ body {
     align-items: center; 
     justify-content: space-between;
     text-align: center; 
-    height: 200px; 
-    min-height: 450px; 
+    height: 100%; 
+    min-height: 100%; 
     transition: all 0.3s ease-in-out;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .marco-foto {
     width: 100%;
-    height: 240px; 
+    height: 140px; 
     margin-bottom: 15px;
     overflow: hidden; 
     position: relative;
@@ -645,7 +646,7 @@ body {
     object-fit: contain; 
     margin-bottom: 15px; 
     transition: transform 0.3s ease; 
-
+    
     transform-origin: center center;
 }
 
@@ -974,12 +975,30 @@ body {
 /* 
    RESPONSIVE DESIGN
 */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .cuadricula-selectores-cat { 
         grid-template-columns: repeat(3, 1fr); 
+        width: 100%;
+        max-width: 900px; 
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding-left: 20px; 
+        padding-right: 20px; 
+
+        justify-content: center;
+        place-items: center;
     }
+    
     .grid-10-productos { 
         grid-template-columns: repeat(3, minmax(0, 1fr)); 
+        width: 100%;
+        max-width: 1000px;
+        margin:0 auto;
+        box-sizing: border-box;
+        padding-left: 15px;
+        padding-right: 15px;
+        justify-content: center;
+        place-items: center;
     }
 }
 
@@ -1027,25 +1046,31 @@ body {
         gap: 15px; 
         padding: 15px 0; 
     }
+    
     .cuadricula-selectores-cat { 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
-        
-        /* AJUSTE QUIRÚRGICO 1: Cero márgenes fijos, ancho fluido y control de caja */
         margin: 0 auto; 
         width: 100%;
         box-sizing: border-box; 
         gap: 15px;
-        padding: 15px;
+        padding: 15px; 
     }
+    
     .grid-10-productos { 
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px; 
         padding: 10px 15px; 
-        box-sizing: border-box; /* Controla el desborde */
+        box-sizing: border-box; 
     }
+    
+    
+    .marco-foto {
+        height: 160px; 
+    }
+    
     .pie-superior { 
         display: grid;
         grid-template-columns: 1fr; 
@@ -1066,7 +1091,6 @@ body {
     }
 }
 
-
 @media (max-width: 420px ) {
     .cuadricula-selectores-cat,
     .grid-10-productos {
@@ -1079,13 +1103,23 @@ body {
     .tarjeta-producto {
         min-width: 0; 
         width: 100%;
-        padding: 15px 10px; 
+        padding: 12px 8px; 
         box-sizing: border-box;
     }
     
     .cabecera-acciones {
         gap: 10px; 
     }
+    .nombre-producto {
+        font-size: 13px; 
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 52px; 
+    }
+    
 }
 
 
