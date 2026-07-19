@@ -609,7 +609,7 @@ body {
    */
 .grid-10-productos { 
     display: grid; 
-    grid-template-columns: repeat(5, minmax(0, 1fr)); 
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
     gap: 20px; 
     align-items: stretch; 
 }
@@ -624,8 +624,8 @@ body {
     align-items: center; 
     justify-content: space-between;
     text-align: center; 
-    height: 90%; 
-    min-height: 350px; 
+    height: 200px; 
+    min-height: 450px; 
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 }
@@ -641,7 +641,7 @@ body {
 
 .img-producto { 
     width: 100%; 
-    height: 90%; 
+    height: 100%; 
     object-fit: contain; 
     margin-bottom: 15px; 
     transition: transform 0.3s ease; 
@@ -653,6 +653,7 @@ body {
     transform: scale(2.2); 
     cursor: zoom-in;
 }
+
 
 .nombre-producto { 
     font-size: 16px; 
@@ -972,7 +973,7 @@ body {
 
 /* 
    RESPONSIVE DESIGN
-    */
+*/
 @media (max-width: 1100px) {
     .cuadricula-selectores-cat { 
         grid-template-columns: repeat(3, 1fr); 
@@ -1012,7 +1013,6 @@ body {
         display: flex; 
         justify-content: center;
         align-items: center;
-        
     }
     .navegacion-principal { 
         display: none; 
@@ -1028,21 +1028,24 @@ body {
         padding: 15px 0; 
     }
     .cuadricula-selectores-cat { 
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
-        margin-left:70px;
-        margin-right: 70px ;
-        gap:15px;
-        padding:20px;
+        
+        /* AJUSTE QUIRÚRGICO 1: Cero márgenes fijos, ancho fluido y control de caja */
+        margin: 0 auto; 
+        width: 100%;
+        box-sizing: border-box; 
+        gap: 15px;
+        padding: 15px;
     }
     .grid-10-productos { 
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 15px; 
         padding: 10px 15px; 
+        box-sizing: border-box; /* Controla el desborde */
     }
-    
     .pie-superior { 
         display: grid;
         grid-template-columns: 1fr; 
@@ -1056,12 +1059,33 @@ body {
         gap: 30px; 
     }
     .metodos-pago { 
-        display:flex;
+        display: flex;
         justify-content: center; 
         flex-wrap: wrap;
-        gap:10px;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 420px ) {
+    .cuadricula-selectores-cat,
+    .grid-10-productos {
+        gap: 8px; 
+        padding: 10px 5px; 
+    }
+
+   
+    [class^="tarjeta-filtro-cat-"],
+    .tarjeta-producto {
+        min-width: 0; 
+        width: 100%;
+        padding: 15px 10px; 
+        box-sizing: border-box;
     }
     
+    .cabecera-acciones {
+        gap: 10px; 
+    }
 }
 
 
